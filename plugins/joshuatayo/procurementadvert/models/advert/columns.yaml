@@ -1,0 +1,30 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    categoryName:
+        label: Category
+        type: text
+        searchable: true
+        sortable: true
+    is_enabled:
+        label: Enabled
+        type: switch
+    date_added:
+        label: 'Date Added'
+        type: datetime
+        sortable: true
+    deadline:
+        label: 'Deadline At'
+        type: datetime
+        sortable: true
+    created_at:
+        label: 'Created At'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'Updated At'
+        type: datetime
+        sortable: true

@@ -1,0 +1,29 @@
+v1.0.1:
+    - 'Initialize plugin.'
+v1.0.2:
+    - 'Created table joshuatayo_fha_services'
+    - builder_table_create_joshuatayo_fha_services.php
+v1.0.3:
+    - 'Created table joshuatayo_fha_galleries'
+    - builder_table_create_joshuatayo_fha_galleries.php
+v1.0.4:
+    - 'Created table joshuatayo_fha_property_prices'
+    - builder_table_create_joshuatayo_fha_property_prices.php
+v1.0.5:
+    - 'Created table joshuatayo_fha_projects'
+    - builder_table_create_joshuatayo_fha_projects.php
+v1.0.6:
+    - 'Created table joshuatayo_fha_sliders'
+    - builder_table_create_joshuatayo_fha_sliders.php
+v1.0.7:
+    - 'Created table joshuatayo_fha_partners'
+    - builder_table_create_joshuatayo_fha_partners.php
+v1.0.8:
+    - 'Created table joshuatayo_fha_messages'
+    - builder_table_create_joshuatayo_fha_messages.php
+v1.0.9:
+    - 'Created table joshuatayo_fha_serviceforms'
+    - builder_table_create_joshuatayo_fha_serviceforms.php
+v1.0.10:
+    - 'Created table joshuatayo_fha_videos'
+    - builder_table_create_joshuatayo_fha_videos.php

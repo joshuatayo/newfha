@@ -1,0 +1,10 @@
+name: Comments
+form: $/joshuatayo/news/models/comment/fields.yaml
+modelClass: JoshuaTayo\News\Models\Comment
+defaultRedirect: joshuatayo/news/comments
+create:
+    redirect: 'joshuatayo/news/comments/update/:id'
+    redirectClose: joshuatayo/news/comments
+update:
+    redirect: joshuatayo/news/comments
+    redirectClose: joshuatayo/news/comments

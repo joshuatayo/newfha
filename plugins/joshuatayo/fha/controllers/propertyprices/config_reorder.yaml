@@ -1,0 +1,4 @@
+title: PropertyPrices
+modelClass: JoshuaTayo\Fha\Models\PropertyPrice
+toolbar:
+    buttons: reorder_toolbar

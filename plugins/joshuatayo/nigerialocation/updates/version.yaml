@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table joshuatayo_nigerialocation_geopoliticalzones'
+    - builder_table_create_joshuatayo_nigerialocation_geopoliticalzones.php
+1.0.3:
+    - 'Created table joshuatayo_nigerialocation_states'
+    - builder_table_create_joshuatayo_nigerialocation_states.php
+1.0.4:
+    - 'Created table joshuatayo_nigerialocation_cities'
+    - builder_table_create_joshuatayo_nigerialocation_cities.php
+1.0.5:
+    - 'Created table joshuatayo_nigerialocation_places'
+    - builder_table_create_joshuatayo_nigerialocation_places.php

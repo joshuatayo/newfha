@@ -1,0 +1,243 @@
+fields:
+    is_enabled:
+        label: Eanbled
+        span: full
+        default: 1
+        type: checkbox
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: small
+        span: full
+        type: textarea
+    service_image:
+        label: 'File Image'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    service_file:
+        label: 'File upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+tabs:
+    fields:
+        form_fields:
+            prompt: 'Add new item'
+            span: full
+            style: collapsed
+            type: repeater
+            tab: Form
+            form:
+                fields:
+                    name:
+                        span: full
+                        label: 'FIELD NAME'
+                        comment: 'Lower case without special characters (eg. name, email, home_address, ...)'
+                        type: text
+                        required: true
+                    type:
+                        span: left
+                        label: 'Field type'
+                        type: dropdown
+                        required: true
+                        cssClass: field-indent
+                    label:
+                        span: right
+                        label: Label
+                        placeholder: 'Full name'
+                        type: text
+                        cssClass: field-indent
+                    field_values:
+                        prompt: 'Add values'
+                        span: full
+                        type: repeater
+                        style: collapsed
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: type
+                            condition: 'value[dropdown]'
+                        form:
+                            fields:
+                                field_value_id:
+                                    span: left
+                                    label: 'Field value ID'
+                                    type: text
+                                field_value_content:
+                                    span: right
+                                    label: 'Field value content'
+                                    type: text
+                    field_custom_code:
+                        span: full
+                        label: 'joshuatayo.fha::lang.settings.form_fields.custom_code'
+                        comment: 'joshuatayo.fha::lang.settings.form_fields.custom_code_comment'
+                        type: codeeditor
+                        size: large
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: type
+                            condition: 'value[custom_code]'
+                    field_custom_code_twig:
+                        span: left
+                        label: 'joshuatayo.fha::lang.settings.form_fields.custom_code_twig'
+                        comment: 'joshuatayo.fha::lang.settings.form_fields.custom_code_twig_comment'
+                        type: checkbox
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: type
+                            condition: 'value[custom_code]'
+                    field_custom_code_line:
+                        span: full
+                        type: section
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: type
+                            condition: 'value[custom_code]'
+                    field_custom_content:
+                        span: full
+                        label: 'joshuatayo.fha::lang.settings.form_fields.custom_content'
+                        comment: 'joshuatayo.fha::lang.settings.form_fields.custom_content_comment'
+                        type: richeditor
+                        size: large
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: type
+                            condition: 'value[custom_content]'
+                    field_custom_content_section:
+                        span: full
+                        type: section
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: type
+                            condition: 'value[custom_content]'
+                    field_styling:
+                        label: 'joshuatayo.fha::lang.settings.form_fields.field_styling'
+                        comment: 'joshuatayo.fha::lang.settings.form_fields.field_styling_comment'
+                        span: left
+                        type: checkbox
+                        tab: 'joshuatayo.fha::lang.settings.tabs.form_fields'
+                        cssClass: field-indent
+                    autofocus:
+                        label: 'joshuatayo.fha::lang.settings.form_fields.autofocus'
+                        comment: 'joshuatayo.fha::lang.settings.form_fields.autofocus_comment'
+                        span: right
+                        type: checkbox
+                        tab: 'joshuatayo.fha::lang.settings.tabs.form_fields'
+                        cssClass: field-indent
+                    wrapper_css:
+                        span: left
+                        label: 'joshuatayo.fha::lang.settings.form_fields.wrapper_css'
+                        placeholder: 'joshuatayo.fha::lang.settings.form_fields.wrapper_css_placeholder'
+                        type: text
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: field_styling
+                            condition: checked
+                    label_css:
+                        span: left
+                        label: 'joshuatayo.fha::lang.settings.form_fields.label_css'
+                        placeholder: 'joshuatayo.fha::lang.settings.form_fields.label_css_placeholder'
+                        type: text
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: field_styling
+                            condition: checked
+                    field_css:
+                        span: right
+                        label: 'joshuatayo.fha::lang.settings.form_fields.field_css'
+                        placeholder: 'joshuatayo.fha::lang.settings.form_fields.field_css_placeholder'
+                        type: text
+                        trigger:
+                            action: show
+                            field: field_styling
+                            condition: checked
+                    section_validation:
+                        type: section
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: field_styling
+                            condition: checked
+                    field_validation:
+                        label: 'joshuatayo.fha::lang.settings.form_fields.field_validation'
+                        comment: 'joshuatayo.fha::lang.settings.form_fields.field_validation_comment'
+                        span: full
+                        type: checkbox
+                        cssClass: field-indent
+                    validation:
+                        prompt: 'joshuatayo.fha::lang.settings.form_fields.validation_prompt'
+                        span: full
+                        type: repeater
+                        style: collapsed
+                        cssClass: field-indent
+                        trigger:
+                            action: show
+                            field: field_validation
+                            condition: checked
+                        form:
+                            fields:
+                                validation_type:
+                                    span: left
+                                    label: 'joshuatayo.fha::lang.settings.form_fields.validation'
+                                    type: dropdown
+                                    emptyOption: 'joshuatayo.fha::lang.settings.form_field_validation.select'
+                                validation_error:
+                                    span: right
+                                    label: 'joshuatayo.fha::lang.settings.form_fields.validation_error'
+                                    placeholder: 'joshuatayo.fha::lang.settings.form_fields.validation_error_placeholder'
+                                    type: text
+                                validation_custom_type:
+                                    span: left
+                                    label: 'joshuatayo.fha::lang.settings.form_fields.validation_custom_type'
+                                    placeholder: 'joshuatayo.fha::lang.settings.form_fields.validation_custom_type_placeholder'
+                                    comment: 'joshuatayo.fha::lang.settings.form_fields.validation_custom_type_comment'
+                                    commentHtml: true
+                                    type: text
+                                    trigger:
+                                        action: show
+                                        field: validation_type
+                                        condition: 'value[custom]'
+                                validation_custom_pattern:
+                                    span: right
+                                    label: 'joshuatayo.fha::lang.settings.form_fields.validation_custom_pattern'
+                                    placeholder: 'joshuatayo.fha::lang.settings.form_fields.validation_custom_pattern_placeholder'
+                                    comment: 'joshuatayo.fha::lang.settings.form_fields.validation_custom_pattern_comment'
+                                    type: text
+                                    trigger:
+                                        action: show
+                                        field: validation_type
+                                        condition: 'value[custom]'
+        content:
+            label: Content
+            size: large
+            span: full
+            type: richeditor
+            tab: Content

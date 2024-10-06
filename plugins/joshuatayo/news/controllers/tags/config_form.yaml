@@ -1,0 +1,10 @@
+name: Tags
+form: $/joshuatayo/news/models/tag/fields.yaml
+modelClass: JoshuaTayo\News\Models\Tag
+defaultRedirect: joshuatayo/news/tags
+create:
+    redirect: 'joshuatayo/news/tags/update/:id'
+    redirectClose: joshuatayo/news/tags
+update:
+    redirect: joshuatayo/news/tags
+    redirectClose: joshuatayo/news/tags

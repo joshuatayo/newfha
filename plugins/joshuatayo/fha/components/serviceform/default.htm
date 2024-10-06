@@ -1,0 +1,29 @@
+<div class="service-form-title text-center mb-4">
+	<h4 class="text-underline"><b>{{ form.title }}</b></h4>
+</div>
+
+{% if form.form_fields %}
+	{{ form_open(__SELF__.getFormAttributes) }}
+		<div id="simple_contact_flash_message"></div>
+		<input type="hidden" name="service_id" value="{{ form.id }}">
+		<div class="row">
+		{% for field in form.form_fields %}
+			{{ __SELF__.getFieldHtmlCode(field)|raw }}
+		{% endfor %}
+		{% if(__SELF__.settings.recaptcha_enabled) %}
+	        <div class="form-group col-12">
+	            <div class="g-recaptcha" data-sitekey="{{__SELF__.settings.recaptcha_site_key}}"></div>
+	        </div>
+	    {% endif %}
+		<div class="form-group col-12 mb0 py-3">
+	        <button type="submit" class="btn btn-lg btn-thm float-right">Submit</button>
+	    </div>
+		</div>
+	{{ form_close() }}
+{% endif %}
+
+{% if form.content %}
+
+	{{ form.content |raw }}
+
+{% endif %}

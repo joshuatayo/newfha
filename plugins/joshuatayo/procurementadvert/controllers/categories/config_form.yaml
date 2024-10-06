@@ -1,0 +1,10 @@
+name: Categories
+form: $/joshuatayo/procurementadvert/models/category/fields.yaml
+modelClass: JoshuaTayo\ProcurementAdvert\Models\Category
+defaultRedirect: joshuatayo/procurementadvert/categories
+create:
+    redirect: 'joshuatayo/procurementadvert/categories/update/:id'
+    redirectClose: joshuatayo/procurementadvert/categories
+update:
+    redirect: joshuatayo/procurementadvert/categories
+    redirectClose: joshuatayo/procurementadvert/categories

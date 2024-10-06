@@ -1,0 +1,134 @@
+{% set items = __SELF__.data %}
+{% if __SELF__.displayType == 'newProperty' %}
+    <div class="feature_property_slider">
+        {% for item in __SELF__.data %}
+            <div class="item">
+                <div class="feat_property">
+                    <div class="thumb">
+                        <img class="img-whp" src="{{ item.srcimage }}" width="360" height="230" alt="">
+                        <div class="thmb_cntnt">
+                            <ul class="tag mb0">
+                                <li class="list-inline-item"><a>For {{ item.status.name }}</a></li>
+                                {% if item.is_feature %}
+                                    <li class="list-inline-item"><a>Featured</a></li>
+                                {% endif %}
+                            </ul>
+                            <ul class="icon mb0">
+                                <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                                <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                            </ul>
+                            <a class="fp_price">₦{{ item.formatPrice }}</a>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="tc_content">
+                            <p class="text-thm">{{ item.type.name }}</p>
+                            <a href="{{ item.url }}"><h4>{{ item.title }}</h4></a>
+                            <p><span class="flaticon-placeholder"></span> {{ item.address }}{% if item.place %}, {{ item.place.name }}{% endif %}.</p>
+                        </div>
+                        <!--<div class="fp_footer">-->
+                        <!--    <ul class="prop_details mb0">-->
+                        <!--        <li class="list-inline-item"><a><span class="fa fa-bed"></span> Beds: 4</a></li>-->
+                        <!--        <li class="list-inline-item"><a href="#">Baths: 2</a></li>-->
+                        <!--        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>-->
+                        <!--    </ul>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <span class="property-nodata">{{ noPropertyMessage }}</span>
+        {% endfor %}
+    </div>
+{% elseif __SELF__.displayType == 'listProperty' %}
+    <div class="row">
+        {% for item in __SELF__.data %}
+            <div class="col-md-6 col-lg-4">
+                <div class="feat_property">
+                    <div class="thumb">
+                        <img class="img-whp" src="{{ item.srcimage }}" width="360" height="230" alt="">
+                        <div class="thmb_cntnt">
+                            <ul class="tag mb0">
+                                <li class="list-inline-item"><a>For {{ item.status.name }}</a></li>
+                                {% if item.is_feature %}
+                                    <li class="list-inline-item"><a>Featured</a></li>
+                                {% endif %}
+                            </ul>
+                            <ul class="icon mb0">
+                                <li class="list-inline-item views"><a>{{ item.views }} <span class="flaticon-view"></span></a></li>
+                            </ul>
+                            <a class="fp_price">₦{{ item.formatPrice }}</a>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="tc_content">
+                            <p class="text-thm">{{ item.type.name }}</p>
+                            <a href="{{ item.url }}"><h4>{{ item.title }}</h4></a>
+                            <p><span class="flaticon-placeholder"></span> {{ item.address }}{% if item.place %}, {{ item.place.name }}{% endif %}.</p>
+                        </div>
+                        <div class="fp_footer">
+                            <ul class="prop_details mb0">
+                                {% for feature in item.features.take(3) %}
+                                <li class="list-inline-item"><a>{{ feature.value }} {{ feature.name }} </a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-lg-12 text-center">
+                <span class="property-nodata">{{ noPropertyMessage }}</span>
+            </div>
+        {% endfor %}
+        <div class="col-lg-12 mt20">
+            <div class="mbp_pagination">
+                {% if items.lastPage > 1 %}
+                <ul class="page_navigation">
+                    {% if items.currentPage > 1 %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (items.currentPage-1) }) }}" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
+                    </li>
+                    {% endif %}
+
+                    {% for page in 1..items.lastPage %}
+                    <li class="page-item {{ items.currentPage == page ? 'active' : null }}" aria-current="{{ items.currentPage == page ? 'page' : null }}">
+                        <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if items.lastPage > items.currentPage %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (items.currentPage+1) }) }}"><span class="flaticon-right-arrow"></span></a>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% elseif __SELF__.displayType == 'featureProperty' %}
+    <div class="sidebar_feature_property_slider">
+        {% for item in __SELF__.data %}
+            {% if item.is_feature %}
+            <div class="item">
+                <div class="feat_property home7 agent">
+                    <div class="thumb">
+                        <img class="img-whp" src="{{ item.srcimage }}" width="360" height="200" alt="ik.jpg">
+                        <div class="thmb_cntnt">
+                            <ul class="tag mb0">
+                                <li class="list-inline-item"><a>For {{ item.status.name }}</a></li>
+                                <li class="list-inline-item"><a>Featured</a></li>
+                            </ul>
+                            <a class="fp_price">₦{{ item.formatPrice }}<small></small></a>
+                            <a href="{{ item.url }}"><h4 class="posr color-white">{{ item.title }}</h4></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% else %}
+    <p class="text-center">Select property list display type</p>
+{% endif %}

@@ -1,0 +1,15 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    button_name:
+        label: 'Button Name'
+        type: text
+        searchable: true
+        sortable: true
+    is_enabled:
+        label: Enabled
+        type: number
+        sortable: false

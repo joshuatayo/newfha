@@ -1,0 +1,44 @@
+{% set photo = __SELF__.photos %}
+
+{% for photo in __SELF__.photos %}
+<div class="col-sm-6 col-md-6 col-lg-4">
+	<div class="gallery_item properti_city">
+		<img class="img-fluid img-circle-rounded w100" src="{{ photo.srcimage }}" alt="fp1.jpg">
+			<div class="overlay">
+				<div class="details">
+				<h4><span class="flaticon-calendar"></span> {{ photo.date|date('M d, Y') }}</h4>
+				<p>{{ photo.title }}</p>
+			</div>
+		</div>
+		<div class="gallery_overlay"><a class="icon" href="{{ photo.url }}"><span class="flaticon-zoom-in"></span></a></div>
+	</div>
+</div>
+{% else %}
+    <span class="photo-nodata text-center">{{ noPhotoMessage }}</span>
+{% endfor %}
+
+<div class="col-lg-12 mt20">
+	<div class="mbp_pagination">
+		{% if photos.lastPage > 1 %}
+		<ul class="page_navigation">
+			{% if photos.currentPage > 1 %}
+			<li class="page-item">
+				<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (photos.currentPage-1) }) }}"> <span class="flaticon-left-arrow"></span> Prev</a>
+			</li>
+			{% endif %}
+
+			{% for page in 1..photos.lastPage %}
+			<li class="page-item {{ photos.currentPage == page ? 'active' : null }}" aria-current="{{ photos.currentPage == page ? 'page' : null }}">
+				<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+			</li>
+			{% endfor %}
+
+			{% if photos.lastPage > photos.currentPage %}
+				<li class="page-item">
+				   	<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (photos.currentPage+1) }) }}"><span class="flaticon-right-arrow"></span></a>
+			</li>
+		    {% endif %}
+		</ul>
+		{% endif %}
+	</div>
+</div>

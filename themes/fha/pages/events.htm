@@ -1,0 +1,125 @@
+url = "/events/:slug?/:page?"
+layout = "layout"
+title = "Events"
+is_hidden = 0
+
+[eventList]
+noEventMessage = "No events found"
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+eventsPerPage = 15
+categoryPage = "events"
+detailPage = "event"
+sortField = "created_at"
+sortType = "desc"
+
+[eventCategoryList]
+categoryPage = "events"
+
+[searchForm]
+==
+<section class="inner_page_breadcrumb bg_page events">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="{{ 'home'|page }}">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Events</li>
+						</ol>
+						<h1 class="breadcrumb_title">Events</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+    <section class="blog_post_container bgc-f7 pt30 pb30">
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-title text-center">
+                        <img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+                        <h2 class="text-uppercase mt0">Events</h2>
+                        <p>Events of FHA</p>
+                    </div>
+                </div>
+            </div>
+			<div class="row">
+				<div class="col-lg-8">
+                    {% if events is not empty %}
+					<div class="main_blog_post_content">
+                        {% for event in events %}
+                            <div class="for_blog feat_property">
+                                <div class="thumb">
+                                    <img class="img-whp" src="{{ event.image|media }}" alt="{{ event.title }}">
+                                    {% if event.category %}
+                                        <div class="blog_tag">{{ event.category.name }}</div>
+                                    {% endif %}
+                                </div>
+                                <div class="details">
+                                    <div class="tc_content">
+                                        <h4 class="mb15">{{ event.title }}</h4>
+                                        {{ str_limit(event.description, 250)|raw }}
+                                    </div>
+                                    <div class="fp_footer">
+                                        <ul class="fp_meta float-left mb0">
+                                            <li class="list-inline-item"><a href="#"><span class="flaticon-calendar pr10"></span> {{ event.date|date('j F, Y') }}</a></li>
+                                        </ul>
+                                        <a class="fp_pdate float-right text-thm" href="{{ event.url }}">Read More <span class="flaticon-next"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        {% if events.lastPage > 1 %}
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="mbp_pagination mt20">
+									<ul class="page_navigation">
+                                        {% if events.currentPage > 1 %}
+									    <li class="page-item">
+									    	<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (events.currentPage-1) }) }}" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
+									    </li>
+                                        {% endif %}
+                                        {% for page in 1..events.lastPage %}
+                                            <li class="page-item {{ events.currentPage == page ? 'active' : null }}" {% if events.currentPage == page %}aria-current="page"{% endif %}>
+                                                <a class="page-link" href="{{ this.events.baseFileName|page({ (pageParam): page }) }}">{{ page }} {% if events.currentPage == page %}<span class="sr-only">(current)</span>{% endif %}</a>
+                                            </li>
+                                        {% endfor %}
+                                        {% if events.lastPage > events.currentPage %}
+									    <li class="page-item">
+									    	<a class="page-link" href="{{ this.events.baseFileName|page({ (pageParam): (events.currentPage+1) }) }}"><span class="flaticon-right-arrow"></span></a>
+									    </li>
+                                        {% endif %}
+									</ul>
+								</div>
+							</div>
+						</div>
+                        {% endif %}
+					</div>
+                    {% else %}
+                        <div class="not-found">
+                            <h4 class="text-center">{{ noEventMessage }}</h4>
+                        </div>
+                    {% endif %}
+				</div>
+				<div class="col-lg-4">
+                    {% component 'searchForm' %}
+
+                    {% if categories is not empty %}
+                        <div class="terms_condition_widget">
+                            <h4 class="title">Events Categories</h4>
+                            <div class="widget_list">
+                                <ul class="list_details">
+                                    {% for category in categories %}
+                                    <li><a href="{{ category.url }}"><i class="fa fa-caret-right mr10"></i>{{ category.name }} <span class="float-right">{{ category.eventsCount }} Events</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+				</div>
+			</div>
+		</div>
+	</section>

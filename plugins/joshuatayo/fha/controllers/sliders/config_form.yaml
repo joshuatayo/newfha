@@ -1,0 +1,10 @@
+name: Sliders
+form: $/joshuatayo/fha/models/slider/fields.yaml
+modelClass: JoshuaTayo\Fha\Models\Slider
+defaultRedirect: joshuatayo/fha/sliders
+create:
+    redirect: 'joshuatayo/fha/sliders/update/:id'
+    redirectClose: joshuatayo/fha/sliders
+update:
+    redirect: joshuatayo/fha/sliders
+    redirectClose: joshuatayo/fha/sliders

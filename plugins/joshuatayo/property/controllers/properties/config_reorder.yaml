@@ -1,0 +1,4 @@
+title: Properties
+modelClass: JoshuaTayo\Property\Models\Property
+toolbar:
+    buttons: reorder_toolbar

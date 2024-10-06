@@ -1,0 +1,83 @@
+url = "/"
+layout = "layout"
+title = "Home"
+is_hidden = 0
+
+[slider]
+sortField = "created_at"
+sortType = "desc"
+
+[posts]
+noPostMessage = "No post found"
+displayType = "latestPost"
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 3
+detailPage = "newsdetails"
+sortField = "published_at"
+sortType = "desc"
+
+[filterform]
+displayType = "largeFilter"
+filterPage = "property-listing"
+
+[propertylist]
+noPropertyMessage = "No properties found"
+displayType = "newProperty"
+pageNumber = "{{ :page }}"
+itemsPerPage = 6
+detailPage = "property"
+searchPage = "property-listing"
+sortField = "created_at"
+sortType = "desc"
+==
+<section class="p0" >
+	<div class="container-fluid p0">
+        <div class="home8-slider vh-85">
+        	{% component 'slider' %}
+        </div>
+    </div>
+</section>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            {% component 'filterform' %}
+        </div>
+    </div>
+</div>
+ -->
+
+<section id="property-city" class="our-blog bgc-f7 pb30">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 offset-lg-3">
+				<div class="main-title text-center">
+				<img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+					<h2>Latest News</h2>
+					<p>The latest from our activities.</p>
+				</div>
+			</div>
+		</div>
+		{% component 'posts' %}
+		<a href="{{ 'news-listing'|page }}" type="button" class="btn dbxshad btn-md circle btn-thm">View All News<span class="flaticon-right-arrow ml-2"></span></a>
+	</div>
+</section>
+
+<section id="feature-property" class="feature-property bgc-f7">
+	<div class="container ovh">
+		<div class="row">
+			<div class="col-lg-6 offset-lg-3">
+				<div class="main-title text-center mb40">
+				<img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+					<h2>New Properties</h2>
+					<p>The latest properties added to our estates across the country</p>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				{% component 'propertylist' %}
+				<a style="margin-bottom:10px;" href="{{ 'property-listing'|page }}" type="button" class="btn dbxshad btn-md btn-thm circle mt-2 mb-10">View More Properties<span class="flaticon-right-arrow ml-2"></span></a>
+			</div>
+		</div>
+	</div>
+</section>

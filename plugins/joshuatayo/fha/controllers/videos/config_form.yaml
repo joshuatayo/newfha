@@ -1,0 +1,10 @@
+name: Videos
+form: $/joshuatayo/fha/models/video/fields.yaml
+modelClass: JoshuaTayo\Fha\Models\Video
+defaultRedirect: joshuatayo/fha/videos
+create:
+    redirect: 'joshuatayo/fha/videos/update/:id'
+    redirectClose: joshuatayo/fha/videos
+update:
+    redirect: joshuatayo/fha/videos
+    redirectClose: joshuatayo/fha/videos

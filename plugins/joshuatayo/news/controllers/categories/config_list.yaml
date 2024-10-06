@@ -1,0 +1,12 @@
+list: $/joshuatayo/news/models/category/columns.yaml
+modelClass: JoshuaTayo\News\Models\Category
+title: Categories
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'joshuatayo/news/categories/update/:id'

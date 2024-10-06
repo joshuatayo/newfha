@@ -1,0 +1,307 @@
+{% if __SELF__.displayType == 'largeFilter' %}
+    <div class="home_adv_srch_opt home3">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+            {% if __SELF__.status %}
+                {% for s in status %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if loop.first %}active{% endif %}" id="pills-{{ s.slug }}-tab" data-toggle="pill" href="#pills-{{ s.slug }}" role="tab" aria-controls="pills-{{ s.slug }}" aria-selected="true">{{ s.name }}</a>
+                    </li>
+                {% endfor %} 
+            {% endif %}        
+        </ul>
+        <div class="tab-content home1_adsrchfrm" id="pills-tabContent">
+            {% for s in status %}
+                <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="pills-{{ s.slug }}" role="tabpanel" aria-labelledby="pills-{{ s.slug }}-tab">
+                    <div class="home1-advnc-search home3">
+                        {{ form_open({ url: __SELF__.filterPage, method: 'GET' }) }}
+                        <ul class="h1ads_1st_list mb0">
+                            <input type="hidden" name="status" value="{{ s.id }}">
+                            <li class="list-inline-item">
+                                <div class="form-group">
+                                    <input type="text" name="title" class="form-control" id="exampleInputName2" placeholder="Enter keyword...">
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="search_option_two">
+                                    <div class="candidate_revew_select">
+                                        <select name="city" class="selectpicker w100 show-tick">
+                                            <option value>Choose The City</option>
+                                            {% if __SELF__.cities %}
+                                                {% for c in cities %}
+                                                    <option value="{{ c.id }}">{{ c.name }}</option>
+                                                {% endfor %} 
+                                            {% endif %}         
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="search_option_two">
+                                    <div class="candidate_revew_select">
+                                        <select name="type" class="selectpicker w100 show-tick">
+                                            <option value>Property Type</option>
+                                            {% if __SELF__.types %}
+                                                {% for t in types %}
+                                                    <option value="{{ t.id }}">{{ t.name }}</option>
+                                                {% endfor %} 
+                                            {% endif %}         
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="small_dropdown2 home3">
+                                    <div id="prncgs" class="btn dd_btn">
+                                        <span>Price</span> <label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
+                                    </div>
+                                    <div class="dd_content2">
+                                        <div class="pricing_acontent">
+                                            <input type="text" name="price[]" value="" class="amount" placeholder="NGN5,000,239"> 
+                                            <input type="text" name="price[]" value="1000000000000" class="amount2"  placeholder="NGN10,050,014">
+                                            <div class="slider-range"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="custome_fields_520 list-inline-item">
+                                <div class="navbered">
+                                    <div class="mega-dropdown home3">
+                                        <span id="show_advbtn" class="dropbtn">Advanced <i class="flaticon-more pl10 flr-520"></i></span>
+                                        <div class="dropdown-content advanced">
+                                            <div class="row p15 pt0-xsd">
+                                                <div class="col-lg-11 col-xl-10">
+                                                    <ul class="apeartment_area_list mb0">
+                                                        <li class="list-inline-item">
+                                                            <div class="candidate_revew_select">
+                                                                <select name="place" class="selectpicker w100 show-tick"
+                                                                data-handler="onGetOptions" dependsOn="city">
+                                                                    <option value>Location</option>
+                                                                    {% if __SELF__.places %}
+                                                                        {% for p in places %}
+                                                                            <option value="{{ p.id }}">{{ p.name }}</option>
+                                                                        {% endfor %}
+                                                                    {% endif %}      
+                                                                </select>      
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <div class="candidate_revew_select">
+                                                                <select name="bedroom" class="selectpicker w100 show-tick">
+                                                                    <option value>No of Bedrooms</option>
+                                                                    {% if __SELF__.bedrooms %}
+                                                                        {% for be in bedrooms %}
+                                                                            <option value="{{ be.id }}">{{ be.value }}</option>
+                                                                        {% endfor %}
+                                                                    {% endif %}      
+                                                                </select>      
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <div class="candidate_revew_select">
+                                                                <select name="bathroom" class="selectpicker w100 show-tick">
+                                                                    <option value>No of Bathrooms</option>
+                                                                    {% if __SELF__.bathrooms %}
+                                                                        {% for ba in bathrooms %}
+                                                                            <option value="{{ ba.id }}">{{ ba.value }}</option>
+                                                                        {% endfor %}
+                                                                    {% endif %}      
+                                                                </select>      
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-1 col-xl-2">
+                                                    <div class="mega_dropdown_content_closer">
+                                                        <h5 class="text-thm text-right mt15"><span id="hide_advbtn" class="curp">Hide</span></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% if __SELF__.amenityList %}
+                                            {% if __SELF__.amenities %}
+                                            <div class="row p15">
+                                                <div class="col-lg-12">
+                                                    <h4 class="text-thm3">Amenities</h4>
+                                                    <ul class="ui_kit_checkbox selectable-list">
+                                                        {% for a in amenities %}
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox"
+                                                                    name="amenities" class="custom-control-input" value="{{ a.name }}" id="customCheck{{ a.id }}">
+                                                                <label class="custom-control-label" for="customCheck{{ a.id }}">{{ a.name }}</label>
+                                                            </div>
+                                                        </li>
+                                                        {% endfor %}
+                                                    </ul>   
+                                                </div>                
+                                            </div>
+                                            {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="search_option_button">
+                                    <button type="submit" class="btn btn-thm3">Search</button>
+                                </div>
+                            </li>
+                        </ul>
+                        {{ form_close() }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% elseif __SELF__.displayType == 'smallFilter' %}
+    <div class="sidebar_advanced_search_widget">
+        {{ form_open({ url: __SELF__.filterPage, method: 'GET' }) }}
+        <ul class="sasw_list mb0">
+            <li class="search_area">
+                <div class="form-group">
+                    <input type="text" name="title" class="form-control" id="exampleInputName1" placeholder="keyword">
+                    <label for="exampleInputEmail"><span class="flaticon-magnifying-glass"></span></label>
+                </div>
+            </li>
+            <li>
+                <div class="search_option_two">
+                    <div class="candidate_revew_select">
+                        <select name="status" class="selectpicker w100 show-tick">
+                            <option value>Property Status</option>
+                            {% if __SELF__.status %}
+                                {% for s in status %}
+                                    <option value="{{ s.id }}">{{ s.name }}</option>
+                                {% endfor %} 
+                            {% endif %}         
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="search_option_two">
+                    <div class="candidate_revew_select">
+                        <select name="type" class="selectpicker w100 show-tick">
+                            <option value>Propery Type</option>
+                            {% if __SELF__.types %}
+                                {% for t in types %}
+                                    <option value="{{ t.id }}">{{ t.name }}</option>
+                                {% endfor %} 
+                            {% endif %}         
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="search_option_two">
+                    <div class="candidate_revew_select">
+                        <select name="city" class="selectpicker w100 show-tick">
+                            <option value>Choose The City</option>
+                            {% if __SELF__.cities %}
+                                {% for c in cities %}
+                                    <option value="{{ c.id }}">{{ c.name }}</option>
+                                {% endfor %} 
+                            {% endif %}         
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="search_option_two">
+                    <div class="candidate_revew_select">
+                        <select name="place" class="selectpicker w100 show-tick">
+                            <option value>Location</option>
+                            {% if __SELF__.places %}
+                                {% for p in places %}
+                                    <option value="{{ p.id }}">{{ p.name }}</option>
+                                {% endfor %} 
+                            {% endif %}         
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="search_option_two">
+                    <div class="candidate_revew_select">
+                        <select name="bedroom" class="selectpicker w100 show-tick">
+                            <option value>Bedroom</option>
+                            {% if __SELF__.bedrooms %}
+                                {% for be in bedrooms %}
+                                    <option value="{{ be.id }}">{{ be.value }}</option>
+                                {% endfor %} 
+                            {% endif %}         
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="search_option_two">
+                    <div class="candidate_revew_select">
+                        <select name="bathroom" class="selectpicker w100 show-tick">
+                            <option value>Bathroom</option>
+                            {% if __SELF__.bathrooms %}
+                                {% for ba in bathrooms %}
+                                    <option value="{{ ba.id }}">{{ ba.value }}</option>
+                                {% endfor %} 
+                            {% endif %}         
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="small_dropdown2">
+                    <div id="prncgs2" class="btn dd_btn">
+                        <span>Price</span>
+                        <label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
+                    </div>
+                    <div class="dd_content2">
+                        <div class="pricing_acontent">
+                            <input type="text" name="price[]" value="" class="amount" placeholder="5,000,239"> 
+                            <input type="text" name="price[]" value="10000000" class="amount2"  placeholder="10,050,014">
+                            <div class="slider-range"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% if __SELF__.amenityList %}
+                {% if __SELF__.amenities %}
+                    <li>
+                        <div id="accordion" class="panel-group">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="#panelBodyRating" class="accordion-toggle link" data-toggle="collapse" data-parent="#accordion"><i class="flaticon-more"></i> Advanced features</a>
+                                    </h4>
+                                </div>
+                                <div id="panelBodyRating" class="panel-collapse collapse">
+                                    <div class="panel-body row">
+                                        <div class="col-lg-12">
+                                            {% for chuck in amenities.chunk(10) %}
+                                            <ul class="ui_kit_checkbox selectable-list float-left fn-400">
+                                                {% for a in chuck %}
+                                                <li>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" name="amenities" class="custom-control-input" value="{{ a.name }}" id="customCheck{{ a.id }}">
+                                                        <label class="custom-control-label" for="customCheck{{ a.id }}">{{ a.name }}</label>
+                                                    </div>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endif %}
+            <li>
+                <div class="search_option_button">
+                    <button type="submit" class="btn btn-block btn-thm">Search</button>
+                </div>
+            </li>
+        </ul>
+        {{ form_close() }}
+    </div>
+{% else %}
+    <p class="text-center">Select Filter Form Display Type</p>
+{% endif %}

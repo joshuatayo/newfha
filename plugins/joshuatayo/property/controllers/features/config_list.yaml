@@ -1,0 +1,12 @@
+list: $/joshuatayo/property/models/feature/columns.yaml
+modelClass: JoshuaTayo\Property\Models\Feature
+title: Features
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'joshuatayo/property/features/update/:id'

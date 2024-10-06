@@ -1,0 +1,48 @@
+plugin:
+    name: 'joshuatayo.property::lang.plugin.name'
+    description: 'joshuatayo.property::lang.plugin.description'
+    author: 'Joshua Tayo'
+    icon: oc-icon-building-o
+    homepage: ''
+navigation:
+    property:
+        label: Property
+        url: joshuatayo/property/properties
+        icon: icon-building-o
+        sideMenu:
+            properties:
+                label: Properties
+                url: joshuatayo/property/properties
+                icon: icon-home
+            types:
+                label: Types
+                url: joshuatayo/property/types
+                icon: icon-square-o
+            bedroom:
+                label: Bedroom
+                url: joshuatayo/property/bedrooms
+                icon: icon-bed
+            bathroom:
+                label: Bathroom
+                url: joshuatayo/property/bathrooms
+                icon: icon-strikethrough
+            status:
+                label: Status
+                url: joshuatayo/property/status
+                icon: icon-square
+            icons:
+                label: Icons
+                url: joshuatayo/property/icons
+                icon: icon-navicon
+            floorplans:
+                label: 'Floor Plans'
+                url: joshuatayo/property/floorplans
+                icon: icon-th
+            feature:
+                label: Features
+                url: joshuatayo/property/features
+                icon: icon-check
+            amenities:
+                label: Amenities
+                url: joshuatayo/property/amenities
+                icon: icon-check-square

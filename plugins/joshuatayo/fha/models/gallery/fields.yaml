@@ -1,0 +1,36 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    date:
+        label: Date
+        mode: date
+        span: auto
+        type: datepicker
+    description:
+        label: Description
+        size: small
+        span: auto
+        type: textarea
+    gallery_images:
+        label: 'Gallery Images'
+        span: full
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

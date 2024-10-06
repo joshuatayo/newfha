@@ -1,0 +1,160 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: auto
+        default: 1
+        type: switch
+        comment: 'Display property'
+    is_feature:
+        label: Featue
+        span: auto
+        type: switch
+        comment: 'Display property on feature section'
+    property_ref:
+        label: 'Property Number'
+        span: auto
+        cssClass: uppercase
+        readOnly: 1
+        type: text
+    title:
+        label: 'Property Title'
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        required: 1
+        preset:
+            field: title
+            type: ''
+        type: text
+    price:
+        label: 'Property Price'
+        span: auto
+        default: '0'
+        attributes:
+            min: '0'
+        type: number
+    status:
+        label: 'Property Status'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: Select
+        span: auto
+        type: relation
+    type:
+        label: 'Property Type'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: Select
+        span: auto
+        type: relation
+    bedroom:
+        label: 'No of Bedroom'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: Select
+        span: auto
+        type: relation
+    bathroom:
+        label: 'No of Bathroom'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: Select
+        span: auto
+        type: relation
+tabs:
+    fields:
+        short_description:
+            label: 'Short description'
+            size: small
+            span: full
+            type: richeditor
+            tab: Description
+        description:
+            label: 'Property Description'
+            size: large
+            span: full
+            type: richeditor
+            tab: Description
+        geopoliticalzone_id:
+            label: Geopoliticalzone
+            span: auto
+            showSearch: true
+            type: dropdown
+            placeholder: '- no default -'
+            tab: Address
+        state_id:
+            label: State
+            span: auto
+            showSearch: true
+            type: dropdown
+            dependsOn: geopoliticalzone_id
+            placeholder: '- no default -'
+            tab: Address
+        city_id:
+            label: City
+            span: auto
+            showSearch: true
+            type: dropdown
+            dependsOn: state_id
+            placeholder: '- no default -'
+            tab: Address
+        place_id:
+            label: Place
+            span: auto
+            showSearch: true
+            type: dropdown
+            dependsOn: city_id
+            placeholder: '- no default -'
+            tab: Address
+        address:
+            label: 'Property Address'
+            size: ''
+            span: full
+            type: textarea
+            tab: Address
+        latitude:
+            label: Latitude
+            span: auto
+            type: number
+            tab: Address
+        longitude:
+            label: Longitude
+            span: auto
+            type: number
+            tab: Address
+        property_images:
+            label: 'Property Images'
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: full
+            type: fileupload
+            tab: 'Gallery Image'
+        floorplans:
+            span: full
+            path: $/joshuatayo/property/models/property/_floorplans.htm
+            type: partial
+            tab: 'Floor Plans'
+        features:
+            span: full
+            path: $/joshuatayo/property/models/property/_features.htm
+            type: partial
+            tab: 'Property Feature'
+        amenities:
+            label: Amenity
+            mode: relation
+            separator: comma
+            customTags: true
+            nameFrom: name
+            useKey: false
+            span: full
+            type: taglist
+            commentAbove: 'Maximum amenity "15"'
+            tab: Amenity

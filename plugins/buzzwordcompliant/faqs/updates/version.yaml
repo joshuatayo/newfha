@@ -1,0 +1,13 @@
+1.0.0:
+    - Create initial tables
+    - create_initial_tables.php
+1.0.1:
+    - Add rich text to question
+    - add_question_details_column.php
+1.1.0:
+    - FAQs now have 'slugs' which means you don't have to rely on the FAQ id from the database
+    - You can now choose your FAQ from the dropdown menu in the component
+    - add_slug_index.php
+1.1.1:
+    - Database maintenance. Updated all timestamp columns to be nullable.
+    - update_timestamp_nullable.php

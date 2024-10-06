@@ -1,0 +1,10 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    value:
+        label: 'Number of Bedroom'
+        type: number
+        sortable: true

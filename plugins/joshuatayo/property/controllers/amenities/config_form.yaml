@@ -1,0 +1,10 @@
+name: Amenities
+form: $/joshuatayo/property/models/amenity/fields.yaml
+modelClass: JoshuaTayo\Property\Models\Amenity
+defaultRedirect: joshuatayo/property/amenities
+create:
+    redirect: 'joshuatayo/property/amenities/update/:id'
+    redirectClose: joshuatayo/property/amenities
+update:
+    redirect: joshuatayo/property/amenities
+    redirectClose: joshuatayo/property/amenities

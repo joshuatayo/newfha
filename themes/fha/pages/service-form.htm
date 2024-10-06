@@ -1,0 +1,33 @@
+title = "Service Form"
+url = "/service-form/:slug"
+layout = "layout"
+is_hidden = 0
+
+[serviceform]
+slug = "{{ :slug }}"
+detailPage = "service-form"
+==
+<section id="why-chose" class="whychose_us bgc-f7 pb30">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-9">
+					<div class="call_card text-left">
+						<div class="service-form-header text-center">
+							<div class="service-form-logo">
+								<img src="{{ 'assets/images/fha.png'|theme }}">
+							</div>
+							<div class="service-form-fha mt-2">
+								<h3 class="mb-0">FEDERAL HOUSING AUTHORITY</h3>
+								<small>(Established under Cap 136 Laws of the Federation of Nigeria)</small>
+								<p>P.M.B. 101, Garki Abuja.</p>
+							</div>
+						</div>
+						<hr/>
+						<div class="service-form">
+							{% component 'serviceform' %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

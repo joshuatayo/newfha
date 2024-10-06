@@ -1,0 +1,143 @@
+tabs:
+    fields:
+        content:
+            label: Content
+            size: huge
+            span: full
+            required: 1
+            type: richeditor
+            tab: About
+        contact_info:
+            label: 'Contact info'
+            prompt: 'Add new item'
+            displayMode: accordion
+            span: full
+            type: repeater
+            tab: 'Contact Info'
+            form:
+                fields:
+                    addresses:
+                        label: 'Contact Address'
+                        prompt: 'Add new address'
+                        displayMode: accordion
+                        span: full
+                        type: repeater
+                        form:
+                            fields:
+                                address:
+                                    label: Address
+                                    span: full
+                                    type: text
+                    phone_numbers:
+                        label: 'Contact Phone Number'
+                        prompt: 'Add new phone number'
+                        displayMode: accordion
+                        span: full
+                        type: repeater
+                        form:
+                            fields:
+                                phone_number:
+                                    label: 'Phone Number'
+                                    span: full
+                                    type: text
+                    email_addresses:
+                        label: 'Contact Email Address'
+                        prompt: 'Add new email address'
+                        displayMode: accordion
+                        span: full
+                        type: repeater
+                        form:
+                            fields:
+                                email_address:
+                                    label: Text
+                                    span: full
+                                    type: text
+        additional_info:
+            label: 'Additional info'
+            prompt: 'Add new item'
+            displayMode: accordion
+            span: full
+            type: repeater
+            tab: 'Other Information'
+            form:
+                fields:
+                    key:
+                        label: Key
+                        span: auto
+                        type: text
+                    value:
+                        label: Value
+                        span: auto
+                        type: text
+fields:
+    is_enabled:
+        label: 'Is enabled'
+        span: full
+        default: 1
+        type: checkbox
+    title:
+        label: Title
+        span: auto
+        readOnly: 0
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        disabled: 0
+        readOnly: 1
+        required: 1
+        preset:
+            field: title
+            type: slug
+        type: text
+    image:
+        label: Image
+        mode: image
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        required: 1
+        type: mediafinder
+        commentAbove: 'Dimensions: 570  ×  429'
+    category:
+        label: Category
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: '-- Category --'
+        span: auto
+        type: relation
+    date:
+        label: Date
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+    start_time:
+        label: 'Start Time'
+        mode: time
+        twelveHour: 1
+        span: auto
+        type: datepicker
+    end_time:
+        label: 'End Time'
+        mode: time
+        twelveHour: 1
+        span: auto
+        type: datepicker
+    location:
+        label: Location
+        span: auto
+        required: 0
+        type: text
+    map_location:
+        label: 'Map Location'
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: small
+        span: full
+        required: 1
+        type: textarea

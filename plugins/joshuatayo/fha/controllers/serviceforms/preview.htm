@@ -1,0 +1,57 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('joshuatayo/fha/serviceforms') ?>">ServiceForms</a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+<div class="container">
+    <div class="row" style="justify-content: center;">
+        <div class="form-preview col-md-9">
+            <div class="form-title text-center">
+                <h4><b><?php echo($serviceform->service->title); ?></b></h4>
+                <p><?php echo($serviceform->created_at->format('d M, Y H:i:s')); ?></p>
+                <p style="text-transform: uppercase;"><strong><?php echo($serviceform->form_id); ?></strong></p>
+            </div>
+            <hr>
+            <div class="layout-row">
+                <div class="form-tabless-fields ">
+                    <?php foreach($serviceform->form_data as $key => $field) : ?>
+                    <?php if ($field): ?>
+                        <?php if ($field == 'on'): ?>
+                            <input type="checkbox" checked="checked" disabled="">
+                            <label for="Form-field-Slider-is_enabled"><?php echo($key); ?></label>
+                        <?php else: ?>
+                        <div class="form-group text-field span-auto   ">
+                            <label><?php echo($key); ?></label>
+                            <input class="form-control" type="text" value="<?php echo( nl2br(html_entity_decode($field)) ) ?>" disabled="">
+                        </div>
+                        <?php endif ?>
+                    <?php endif ?>
+                    <?php endforeach ?>
+                    <?php foreach($serviceform->service_files as $key => $field) : ?>
+                        <?php if ($field): ?>
+                        <div class="form-group span-auto" style="margin-top: 20px">
+                            <span class="icon-file" style="font-size: 25px;"></span>  <a href="<?php echo( nl2br($field->path) ) ?>"> <?php echo( nl2br($field->file_name) ) ?> <i class="icon-download" style="font-size: 15px;"></i> </a>
+                        </div>
+                        <br/>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    
+
+<?php else: ?>
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+<?php endif ?>
+
+<p>
+    <a href="<?= Backend::url('joshuatayo/fha/serviceforms') ?>" class="btn btn-default oc-icon-chevron-left">
+        <?= e(trans('backend::lang.form.return_to_list')) ?>
+    </a>
+</p>

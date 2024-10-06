@@ -1,0 +1,38 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: small
+        span: auto
+        type: textarea
+    button_name:
+        label: 'Button Name'
+        span: auto
+        type: text
+        comment: 'If slider is link to another page.'
+    slider_image:
+        label: 'File upload'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '300'
+        imageHeight: '100'
+        type: fileupload

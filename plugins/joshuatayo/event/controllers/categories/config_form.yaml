@@ -1,0 +1,10 @@
+name: Categories
+form: $/joshuatayo/event/models/category/fields.yaml
+modelClass: JoshuaTayo\Event\Models\Category
+defaultRedirect: joshuatayo/event/categories
+create:
+    redirect: 'joshuatayo/event/categories/update/:id'
+    redirectClose: joshuatayo/event/categories
+update:
+    redirect: joshuatayo/event/categories
+    redirectClose: joshuatayo/event/categories

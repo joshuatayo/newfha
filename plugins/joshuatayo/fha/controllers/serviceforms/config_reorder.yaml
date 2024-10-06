@@ -1,0 +1,4 @@
+title: ServiceForms
+modelClass: JoshuaTayo\Fha\Models\ServiceForm
+toolbar:
+    buttons: reorder_toolbar

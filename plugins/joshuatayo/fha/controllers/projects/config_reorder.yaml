@@ -1,0 +1,4 @@
+title: Projects
+modelClass: JoshuaTayo\Fha\Models\Project
+toolbar:
+    buttons: reorder_toolbar

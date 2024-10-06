@@ -1,0 +1,49 @@
+
+{% set items = __SELF__.data %}
+<div id="bs_carousel" class="carousel slide bs_carousel" data-ride="carousel" data-pause="false" data-interval="7000">
+    <div class="carousel-inner">
+        {% for item in __SELF__.data %}
+        <div class="carousel-item  {% if loop.first %}active {% endif %}" data-slide="0" data-interval="false">
+            <div class="bs_carousel_bg" style="background-image: url({{ item.slider_image.path }});"></div>
+            <div class="bs-caption">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-lg-4">
+                            <div class="feat_property home8" style="top: 150px">
+                                <div class="details">
+                                    <div class="tc_content">
+                                        <ul class="tag">
+                                            <h4>{{ item.title }}</h4>
+                                            <p> {{ item.description }}</p>
+                                        </div>        
+                                    </div>
+                                    {% if item.button_name %}
+                                        <div class="btn float-right"><a href="{{ item.slug }}" class="btn banner-btn">{{ item.button_name }}</a></div>
+                                    {% endif %}   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-lg-8">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="property-carousel-controls">
+        <a class="property-carousel-control-prev" role="button" data-slide="prev">
+            <span class="flaticon-left-arrow-1"></span>
+        </a>
+        <a class="property-carousel-control-next" role="button" data-slide="next">
+            <span class="flaticon-right-arrow"></span>
+        </a>
+    </div>
+</div>
+<div class="carousel slide bs_carousel_prices" data-ride="carousel" data-pause="false" data-interval="false">
+    <div class="carousel-inner"></div>
+    <div class="property-carousel-ticker">
+        <div class="property-carousel-ticker-counter"></div>
+        <div class="property-carousel-ticker-divider">&nbsp;&nbsp;/&nbsp;&nbsp;</div>
+        <div class="property-carousel-ticker-total"></div>
+    </div>
+</div>

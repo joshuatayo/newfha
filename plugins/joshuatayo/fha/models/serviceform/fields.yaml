@@ -1,0 +1,9 @@
+fields:
+    is_new:
+        label: New
+        span: auto
+        type: text
+    is_reply:
+        label: Reply
+        span: auto
+        type: text

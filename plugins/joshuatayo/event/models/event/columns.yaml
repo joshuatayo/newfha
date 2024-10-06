@@ -1,0 +1,21 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    date:
+        label: Date
+        type: date
+        sortable: true
+    is_enabled:
+        label: Enabled
+        type: switch
+    created_at:
+        label: 'Created At'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'Updated At'
+        type: datetime
+        sortable: true

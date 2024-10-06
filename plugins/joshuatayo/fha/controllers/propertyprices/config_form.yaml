@@ -1,0 +1,10 @@
+name: PropertyPrices
+form: $/joshuatayo/fha/models/propertyprice/fields.yaml
+modelClass: JoshuaTayo\Fha\Models\PropertyPrice
+defaultRedirect: joshuatayo/fha/propertyprices
+create:
+    redirect: 'joshuatayo/fha/propertyprices/update/:id'
+    redirectClose: joshuatayo/fha/propertyprices
+update:
+    redirect: joshuatayo/fha/propertyprices
+    redirectClose: joshuatayo/fha/propertyprices

@@ -1,0 +1,12 @@
+{% set partners = __SELF__.partners %}
+
+	<div class="row">
+		{% for partner in __SELF__.partners %}
+		<div class="col-sm-6 col-md-4 col-lg">
+			<div class="our_partner">
+				<img class="img-fluid" src="{{ partner.partner_logo.path }}" width="209" height="197" alt="{{ partner.name }}">
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	

@@ -1,0 +1,15 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    is_enabled:
+        label: Enabled
+        type: number
+        sortable: true
+    cityName:
+        label: 'City Name'
+        type: text
+        searchable: true
+        sortable: true

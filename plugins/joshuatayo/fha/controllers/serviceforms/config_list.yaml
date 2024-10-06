@@ -1,0 +1,12 @@
+list: $/joshuatayo/fha/models/serviceform/columns.yaml
+modelClass: JoshuaTayo\Fha\Models\ServiceForm
+title: ServiceForms
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'joshuatayo/fha/serviceforms/preview/:id'

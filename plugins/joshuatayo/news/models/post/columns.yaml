@@ -1,0 +1,27 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    categoryName:
+        label: Category
+        type: text
+        searchable: false
+        sortable: false
+    views:
+        label: Views
+        type: number
+        sortable: true
+    last_viewed:
+        label: 'Last Viewed'
+        type: datetime
+        sortable: true
+    published:
+        label: Published
+        type: text
+        sortable: true
+    published_at:
+        label: 'Published At'
+        type: date
+        sortable: true

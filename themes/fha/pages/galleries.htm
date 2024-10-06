@@ -1,0 +1,41 @@
+title = "galleries"
+url = "/galleries/:slug"
+layout = "layout"
+is_hidden = 0
+
+[galleryimages]
+slug = "{{ :slug }}"
+==
+<section class="inner_page_breadcrumb bg_page gallery">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="{{ 'home'|page }}">Home</a></li>
+						    <li class="breadcrumb-item"><a href="{{ 'gallery'|page }}">Gallery</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">{{ photo.title }}</li>
+						</ol>
+						<h6 class="breadcrumb_title">Gallery Photos</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Text Content -->
+	<section class="about-section pb30">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main-title text-center">
+						<h4 class="text-uppercase mt0">{{ photo.title }}</h4>
+						<data><span class="flaticon-calendar"></span> {{ photo.date|date('M d, Y') }}</data>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				{% component 'galleryimages' %}
+			</div>
+		</div>
+	</section>

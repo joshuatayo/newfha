@@ -1,0 +1,10 @@
+columns:
+    email:
+        label: Email
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: text
+        sortable: true

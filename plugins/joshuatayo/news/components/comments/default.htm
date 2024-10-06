@@ -1,0 +1,20 @@
+    {% set posts = __SELF__.posts %}
+    <div class="product_single_content mb30" id="comments-content">
+        <div class="mbp_pagination_comments">
+            <div class="total_review">
+                {% if(__SELF__.count) > 0 %}
+                    <h4><span class="flaticon-chat"></span>  <span id="comments-count">{{ __SELF__.count }}</span> Comments</h4>
+                {% endif %}
+                <!-- <a class="write_review float-right fn-xsd" href="#">Write a Review</a> -->
+            </div>
+            <div class="comments">
+                <div>
+                    {% partial "comments::list" posts=posts %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% partial "comments::form" %}
+    
+
+

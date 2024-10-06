@@ -1,0 +1,9 @@
+{% set photo = __SELF__.photo %}
+{% for image in photo.gallery_images %}
+	<div class="col-sm-6 col-md-6 col-lg-4">
+		<div class="gallery_item">
+			<img class="img-fluid img-circle-rounded w100" src="{{ image.thumb(368, 287) }}" alt="fp1.jpg">
+			<div class="gallery_overlay"><a class="icon popup-img" href="{{ image.thumb(800, 800) }}"><span class="flaticon-view"></span></a></div>
+		</div>
+	</div>
+{% endfor %}

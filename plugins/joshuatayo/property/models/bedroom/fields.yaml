@@ -1,0 +1,19 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+        comment: 'Example One Bedroom'
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        required: 1
+        type: text
+    value:
+        label: 'Number of Bedroom'
+        span: auto
+        required: 1
+        type: number

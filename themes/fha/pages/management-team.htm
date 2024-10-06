@@ -1,0 +1,61 @@
+url = "/management-team/:slug"
+layout = "layout"
+title = "Management Team"
+
+[managementTeamDetails]
+slug = "{{ :slug }}"
+==
+<section class="inner_page_breadcrumb bg_page services">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="{{ 'home'|page }}">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Management Team</li>
+						</ol>
+						<h1 class="breadcrumb_title">Management Team</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+<section class="our-agent-single bgc-f7 pt30 pb30">
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-title text-center">
+                    <img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+                    <h2 class="text-uppercase mt0">{{ managementTeam.full_name }}</h2>
+                    <p>Management Team</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="list style2 agent">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12 mb-3 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="000ms">
+                            <div class="thumb">
+                                <img class="img-whp" src="{{ managementTeam.photo|media }}" alt="{{ managementTeam.full_name }}">
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-12 mb-3 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="000ms">
+                            <div class="detailss">
+                                <div class="tc_content">
+                                    <h3>{{ managementTeam.full_name }}</h3>
+                                    <p class="text-thm">{{ managementTeam.position }}</p>
+                                </div>
+                                <div class="fp_footer">
+                                    {{ managementTeam.profile|raw }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

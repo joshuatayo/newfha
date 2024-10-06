@@ -1,0 +1,10 @@
+name: Posts
+form: $/joshuatayo/news/models/post/fields.yaml
+modelClass: JoshuaTayo\News\Models\Post
+defaultRedirect: joshuatayo/news/posts
+create:
+    redirect: 'joshuatayo/news/posts/update/:id'
+    redirectClose: joshuatayo/news/posts
+update:
+    redirect: joshuatayo/news/posts
+    redirectClose: joshuatayo/news/posts

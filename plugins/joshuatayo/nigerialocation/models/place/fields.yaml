@@ -1,0 +1,10 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    name:
+        label: Name
+        span: auto
+        type: text

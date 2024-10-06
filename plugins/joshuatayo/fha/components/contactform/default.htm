@@ -1,0 +1,41 @@
+<div class="form_grid">
+    <h4 class="mb5">{{ __SELF__.settings.text_top_form}}</h4>
+    <form id="contact_form" data-request="{{ __SELF__ }}::onFormSubmit">
+        <div id="simple_contact_flash_message"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="form_name" name="name" class="form-control" required="required" type="text" placeholder="{{__SELF__.properties.nameLabel}}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="form_email" name="email" class="form-control" required="required" type="email" placeholder="{{__SELF__.properties.emailLabel}}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="form_phone_number" name="phone_number" class="form-control" required="required" type="text" placeholder="{{__SELF__.properties.phoneLabel}}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="form_subject" name="subject" class="form-control" required="required" type="text" placeholder="{{__SELF__.properties.subjectLabel}}">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <textarea id="form_message" name="message" class="form-control required" rows="7" required="required" placeholder="{{__SELF__.properties.messageLabel}}"></textarea>
+                </div>
+                {% if(__SELF__.settings.recaptcha_enabled) %}
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="{{__SELF__.settings.recaptcha_site_key}}"></div>
+                    </div>
+                {% endif %}
+                <div class="form-group mb0">
+                    <button type="submit" id="contactFormSubmitButton"  class="btn btn-lg btn-thm">{{__SELF__.properties.buttonText}}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

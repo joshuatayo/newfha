@@ -1,0 +1,13 @@
+{% for menu in menus %}
+	<li class="{% if this.page.id == menu.url %}active{% elseif this.page.id == menu.submenus.url %}active{% endif %}">
+		<a class="menu-list" {% if not menu.has_submenu %}href="{{ menu.url|page }}"{% endif %}><span class="title">{{ menu.name }}</span></a>
+		{% if menu.has_submenu %}
+		<ul>
+			{% for submenu in menu.submenus %}
+		    	<li><a href="{% if menu.url == 'projects' %}{{ submenu.url }}{% else %}{{ submenu.url|page }}{% endif %}">{{ submenu.name }}</a></li>
+		    {% endfor %}             
+	   	</ul>  	
+	   	{% endif %}
+	</li>
+{% endfor %}
+	

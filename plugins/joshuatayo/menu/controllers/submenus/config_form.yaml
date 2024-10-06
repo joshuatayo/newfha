@@ -1,0 +1,10 @@
+name: submenus
+form: $/joshuatayo/menu/models/submenu/fields.yaml
+modelClass: JoshuaTayo\Menu\Models\Submenu
+defaultRedirect: joshuatayo/menu/submenus
+create:
+    redirect: 'joshuatayo/menu/submenus/update/:id'
+    redirectClose: joshuatayo/menu/submenus
+update:
+    redirect: joshuatayo/menu/submenus
+    redirectClose: joshuatayo/menu/submenus

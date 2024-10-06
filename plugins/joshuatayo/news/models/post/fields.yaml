@@ -1,0 +1,86 @@
+fields:
+    published:
+        label: Published
+        span: auto
+        default: 1
+        cssClass: ''
+        type: checkbox
+    user:
+        label: 'Published By'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        cssClass: ''
+        type: relation
+    published_at:
+        label: 'Published On'
+        mode: date
+        span: full
+        cssClass: ''
+        disabled: 1
+        trigger:
+            action: enable
+            field: published
+            condition: checked
+        type: datepicker
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    category:
+        label: Category
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: '-- Category --'
+        span: auto
+        type: relation
+    send_to_subscribers:
+        label: 'Send to Subscriber'
+        span: auto
+        type: checkbox
+    views:
+        label: Views
+        span: auto
+        type: number
+    post_image:
+        label: 'File upload'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    last_viewed:
+        label: 'Last Viewed'
+        span: auto
+        mode: datetime
+        disabled: 0
+        readOnly: 1
+        type: datepicker
+tabs:
+    fields:
+        content:
+            label: Content
+            span: full
+            size: large
+            type: richeditor
+            tab: Content
+        tags:
+            label: Tag
+            mode: relation
+            separator: comma
+            customTags: true
+            useKey: false
+            span: full
+            type: taglist
+            tab: Tag

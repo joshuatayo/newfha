@@ -1,0 +1,10 @@
+name: Categories
+form: $/joshuatayo/report/models/category/fields.yaml
+modelClass: JoshuaTayo\Report\Models\Category
+defaultRedirect: joshuatayo/report/categories
+create:
+    redirect: 'joshuatayo/report/categories/update/:id'
+    redirectClose: joshuatayo/report/categories
+update:
+    redirect: joshuatayo/report/categories
+    redirectClose: joshuatayo/report/categories

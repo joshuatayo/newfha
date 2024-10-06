@@ -1,0 +1,18 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: Email
+        type: text
+        searchable: true
+    phone_number:
+        label: 'Phone Number'
+        type: text
+        searchable: true
+    created_at:
+        label: 'Date and Time'
+        type: datetime
+        sortable: true

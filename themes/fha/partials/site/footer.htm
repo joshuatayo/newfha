@@ -1,0 +1,99 @@
+[viewBag]
+
+[partnerlist]
+==
+{% content 'payment-section.htm' %}
+    {% if partners.count %}
+    <section id="our-partners" class="our-partners">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="main-title text-center">
+                    <img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+                        <h2>Our Partners</h2>
+                        <p>We only work with the best companies and organizations in the execution of our projects</p>
+                    </div>
+                </div>
+            </div>
+            {% component 'partnerlist' %}
+        </div>
+    </section>
+    {% endif %}
+    
+    <!-- Our Footer -->
+    <section class="footer_one home6 bgc-f7">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pr0 pl0">
+                    <div class="footer_about_widget">
+                        <h4>About Us</h4>
+                        <p>The Federal Housing Authority (FHA), a wholly owned agency of the Federal Government of Nigeria, was established vide Decree 40 of 1973 now cited as Act CAP F-14 Laws of the Federation of Nigeria 2004. The Authority is supervised by the Federal Ministry of Works and Housing.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                    <div class="footer_qlink_widget">
+                        <h4>Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ 'who-we-are'|page }}">About Us</a></li>
+                            <li><a href="{{ 'services'|page }}">FHA Services</a></li>
+                            <li><a href="{{ 'property-listing'|page }}">Properties</a></li>
+                            <li><a href="{{ 'news-listing'|page }}">News</a></li>
+                            <li><a href="{{ 'contact'|page }}">Contact Us</a></li>
+                            <li><a href="{{ 'data-privacy-policy'|page }}">Privacy & Policy</a></li>
+                            <li><a href="https://fha.gov.ng/service-form/consent-form">Privacy Consent Form </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                    <div class="footer_contact_widget">
+                        <h4>Contact Us</h4>
+                        <ul class="list-unstyled">
+                            <li class="text-white"><span class="flaticon-maps-and-flags"></span> 26 Julius Nyerere Crescent, Asokoro, PMB 101, Abuja</li>
+                          <!--   <li><a href="tel:+234 (0) 803 323 4804">+234 (0) 803 323 4804</a></li> -->
+                            <li><span class="flaticon-envelop"></span><a href="mailto:info@fha.gov.ng"> info@fha.gov.ng</a></li>
+                            <li><a href='/fhagoldenjubilee'>FHA@50</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                    <div class="footer_social_widget">
+                        <h4>Follow us</h4>
+                        <ul class="mb30">
+                            <li class="list-inline-item"><a href="https://facebook.com/fhanigeria"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/fhanigeria"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.instagram.com/fhanigeria"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                        <h4>Subscribe</h4>
+                        <form class="footer_mailchimp_form">
+                            <div class="form-row align-items-center">
+                                <div class="col-auto">
+                                    <input type="email" class="form-control mb-2" id="inlineFormInput" placeholder="Your email">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn mb-2"><i class="fa fa-angle-right"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Footer Bottom Area -->
+    <section class="footer_middle_area home6 pt20 pb20">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xl-6">
+                    
+                </div>
+                <div class="col-lg-6 col-xl-6">
+                    <div class="copyright-widget home6 text-right">
+                        <p>© 2021 Powered By <a href="http://tbs-ng.com" title="www.tbs-ng.com"> Triune Built Tech Solutions</a>. All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <a style="margin-right:100px;" class="scrollToHome" href="#"><i class="fa fa-angle-up"></i></a>

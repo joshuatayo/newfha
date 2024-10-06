@@ -1,0 +1,10 @@
+name: Types
+form: $/joshuatayo/property/models/type/fields.yaml
+modelClass: JoshuaTayo\Property\Models\Type
+defaultRedirect: joshuatayo/property/types
+create:
+    redirect: 'joshuatayo/property/types/update/:id'
+    redirectClose: joshuatayo/property/types
+update:
+    redirect: joshuatayo/property/types
+    redirectClose: joshuatayo/property/types

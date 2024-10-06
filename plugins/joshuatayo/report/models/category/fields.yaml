@@ -1,0 +1,17 @@
+fields:
+    is_enabled:
+        label: 'Is enabled'
+        span: full
+        default: 1
+        type: checkbox
+    name:
+        label: Name
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text

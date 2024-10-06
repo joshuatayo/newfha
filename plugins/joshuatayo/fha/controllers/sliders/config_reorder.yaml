@@ -1,0 +1,4 @@
+title: Sliders
+modelClass: JoshuaTayo\Fha\Models\Slider
+toolbar:
+    buttons: reorder_toolbar

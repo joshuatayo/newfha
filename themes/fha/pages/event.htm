@@ -1,0 +1,108 @@
+url = "/event/:slug"
+layout = "layout"
+title = "Event"
+
+[eventDetails]
+slug = "{{ :slug }}"
+categoryPage = "events"
+
+[searchForm]
+searchPage = "events"
+
+[eventCategoryList]
+categoryPage = "events"
+==
+<section class="inner_page_breadcrumb bg_page event">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="{{ 'home'|page }}">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Event</li>
+						</ol>
+						<h1 class="breadcrumb_title">Event</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+    <section class="blog_post_container bgc-f7 pt30 pb30">
+		<div class="container pb30">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-title text-center">
+                        <img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+                        <h2 class="text-uppercase mt0">{{ event.title }}</h2>
+                        <p>Event of FHA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+				<div class="col-lg-8">
+					<div class="main_blog_post_content">
+						<div class="mbp_thumb_post">
+                            {% if event.category %}
+							    <div class="blog_sp_tag"><a href="{{ event.category.url }}">{{ event.category.name }}</a></div>
+                            {% endif %}
+							<h3 class="blog_sp_title">{{ event.title }}</h3>
+							<ul class="blog_sp_post_meta">
+								<li class="list-inline-item"><span class="flaticon-calendar"></span></li>
+								<li class="list-inline-item">{{ event.date | date('j F, Y') }}</li>
+							</ul>
+							<div class="thumb">
+								<img class="img-fluid" src="{{ event.image|media }}" alt="{{ event.title }}">
+							</div>
+							<div class="details">
+                                {{ event.content|raw }}
+							</div>
+							<ul class="blog_post_share">
+								<li><p>Share</p></li>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-google"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul>
+						</div>
+                        {% if event.prev() or event.next() %}
+                        <div class="mbp_pagination_tab">
+							<div class="row">
+								<div class="col-sm-6 col-lg-6">
+									<div class="pag_prev">
+										<a {% if event.prev().title %} href="{{ event.prev().slug }}" {% endif %}><span class="flaticon-back"></span></a>
+										<div class="detls"><h5>Previous Post</h5> <p> {{ str_limit(event.prev().title , 21) }}</p></div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-6">
+									<div class="pag_next text-right">
+										<a {% if event.next().title %} href="{{ event.next().slug }}" {% endif %}><span class="flaticon-next"></span></a>
+										<div class="detls"><h5>Next Post</h5> <p> {{ str_limit(event.next().title , 21) }}</p></div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        {% endif %}
+					</div>
+				</div>
+				<div class="col-lg-4">
+
+                    {% if categories is not empty %}
+                        <div class="terms_condition_widget">
+                            <h4 class="title">Events Categories</h4>
+                            <div class="widget_list">
+                                <ul class="list_details">
+                                    {% for category in categories %}
+                                    <li><a href="{{ category.url }}"><i class="fa fa-caret-right mr10"></i>{{ category.name }} <span class="float-right">{{ category.eventsCount }} Events</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+				</div>
+			</div>
+        </div>
+    </section>

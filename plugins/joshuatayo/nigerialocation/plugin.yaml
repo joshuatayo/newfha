@@ -1,0 +1,6 @@
+plugin:
+    name: 'joshuatayo.nigerialocation::lang.plugin.name'
+    description: 'joshuatayo.nigerialocation::lang.plugin.description'
+    author: 'Joshua Tayo'
+    icon: oc-icon-map-marker
+    homepage: ''

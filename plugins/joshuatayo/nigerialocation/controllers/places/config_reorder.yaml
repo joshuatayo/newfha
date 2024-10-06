@@ -1,0 +1,4 @@
+title: Places
+modelClass: JoshuaTayo\NigeriaLocation\Models\Place
+toolbar:
+    buttons: reorder_toolbar

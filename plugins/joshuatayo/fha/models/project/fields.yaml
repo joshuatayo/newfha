@@ -1,0 +1,40 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    name:
+        label: Name
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    submenu:
+        label: Submenu
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: Select
+        span: auto
+        type: relation
+    bg_image:
+        label: Image
+        mode: image
+        imageWidth: '300'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    content:
+        label: Content
+        span: full
+        size: giant
+        type: richeditor

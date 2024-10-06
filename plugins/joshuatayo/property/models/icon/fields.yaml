@@ -1,0 +1,16 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: auto
+        default: 1
+        type: checkbox
+    name:
+        label: 'Icon Name'
+        span: auto
+        required: 1
+        type: text
+    svg:
+        label: 'Icon CSS'
+        span: full
+        required: 1
+        type: text

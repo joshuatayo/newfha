@@ -1,0 +1,4 @@
+title: Floorplans
+modelClass: JoshuaTayo\Property\Models\Floorplan
+toolbar:
+    buttons: reorder_toolbar

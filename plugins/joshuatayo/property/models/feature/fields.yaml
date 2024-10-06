@@ -1,0 +1,28 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    name:
+        label: Name
+        span: auto
+        type: text
+    value:
+        label: Value
+        span: auto
+        type: text
+    icon:
+        label: Icon
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        emptyOption: Select
+        type: relation
+    sorting:
+        label: Sorting
+        span: auto
+        attributes:
+            min: '0'
+        required: 1
+        type: number

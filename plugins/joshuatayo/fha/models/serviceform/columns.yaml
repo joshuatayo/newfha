@@ -1,0 +1,19 @@
+columns:
+    form_id:
+        label: 'Form Id'
+        type: text
+        searchable: true
+        sortable: true
+    serviceName:
+        label: Service
+        type: text
+        searchable: false
+        sortable: false
+    is_new:
+        label: Viewed
+        type: number
+        sortable: true
+    created_at:
+        label: 'Date Submitted'
+        type: datetime
+        sortable: true

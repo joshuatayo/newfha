@@ -1,0 +1,51 @@
+{% set prices = __SELF__.prices %}
+
+{% for price in __SELF__.prices %}
+<div class="col-md-6 col-lg-4">
+	<div class="properti_city home6">
+		<div class="thumb">
+			<img class="img-fluid w100" src="{{ price.srcimage }}" alt="Capture1.png">
+				<div class="thmb_cntnt">
+					<ul class="tag mb0">
+						<li class="list-inline-item"><a href="{{ price.propertyprice_file.path }}" target="_blank"><span class="flaticon-download"></span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="overlay">
+			<div class="details">
+				<a href="{{ price.propertyprice_file.path }}" target="_blank">
+					<h4>{{ price.title }}</h4>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% else %}
+    <span class="price-nodata text-center">{{ noPriceMessage }}</span>
+{% endfor %}
+
+<div class="col-lg-12 mt20">
+	<div class="mbp_pagination">
+		{% if prices.lastPage > 1 %}
+		<ul class="page_navigation">
+			{% if prices.currentPage > 1 %}
+			<li class="page-item">
+				<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (prices.currentPage-1) }) }}"> <span class="flaticon-left-arrow"></span> Prev</a>
+			</li>
+			{% endif %}
+
+			{% for page in 1..prices.lastPage %}
+			<li class="page-item {{ prices.currentPage == page ? 'active' : null }}" aria-current="{{ prices.currentPage == page ? 'page' : null }}">
+				<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+			</li>
+			{% endfor %}
+
+			{% if prices.lastPage > prices.currentPage %}
+				<li class="page-item">
+				   	<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (prices.currentPage+1) }) }}"><span class="flaticon-right-arrow"></span></a>
+			</li>
+		    {% endif %}
+		</ul>
+		{% endif %}
+	</div>
+</div>

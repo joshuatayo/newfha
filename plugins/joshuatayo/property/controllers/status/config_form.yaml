@@ -1,0 +1,10 @@
+name: Status
+form: $/joshuatayo/property/models/status/fields.yaml
+modelClass: JoshuaTayo\Property\Models\Status
+defaultRedirect: joshuatayo/property/status
+create:
+    redirect: 'joshuatayo/property/status/update/:id'
+    redirectClose: joshuatayo/property/status
+update:
+    redirect: joshuatayo/property/status
+    redirectClose: joshuatayo/property/status

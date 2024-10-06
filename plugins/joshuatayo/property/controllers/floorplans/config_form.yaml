@@ -1,0 +1,10 @@
+name: Floorplans
+form: $/joshuatayo/property/models/floorplan/fields.yaml
+modelClass: JoshuaTayo\Property\Models\Floorplan
+defaultRedirect: joshuatayo/property/floorplans
+create:
+    redirect: 'joshuatayo/property/floorplans/update/:id'
+    redirectClose: joshuatayo/property/floorplans
+update:
+    redirect: joshuatayo/property/floorplans
+    redirectClose: joshuatayo/property/floorplans

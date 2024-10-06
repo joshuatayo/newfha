@@ -1,0 +1,19 @@
+columns:
+    title:
+        label: Title
+        type: text
+    link:
+        label: Link
+        type: text
+    date:
+        label: Date
+        type: date
+    is_enabled:
+        label: Enabled
+        type: switch
+    created_at:
+        label: 'Created At'
+        type: datetime
+    updated_at:
+        label: 'Updated At'
+        type: datetime

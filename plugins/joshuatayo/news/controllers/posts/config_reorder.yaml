@@ -1,0 +1,4 @@
+title: Posts
+modelClass: JoshuaTayo\News\Models\Post
+toolbar:
+    buttons: reorder_toolbar

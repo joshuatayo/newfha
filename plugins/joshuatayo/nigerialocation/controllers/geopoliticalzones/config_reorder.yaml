@@ -1,0 +1,4 @@
+title: Geopoliticalzones
+modelClass: JoshuaTayo\NigeriaLocation\Models\Geopoliticalzone
+toolbar:
+    buttons: reorder_toolbar

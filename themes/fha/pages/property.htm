@@ -1,0 +1,128 @@
+title = "Property"
+url = "/property/:slug"
+layout = "layout"
+is_hidden = 0
+
+[propertydetails]
+slug = "{{ :slug }}"
+
+[filterform]
+displayType = "smallFilter"
+filterPage = "property-listing"
+
+[ssbuttonsssb]
+facebook = 1
+twitter = 1
+google+ = 1
+tumblr = 1
+pinterest = 1
+pocket = 0
+reddit = 0
+linkedin = 1
+wordpress = 0
+pinboard = 0
+email = 1
+order_facebook = 1
+order_twitter = 2
+order_google+ = 3
+order_tumblr = 4
+order_pinterest = 5
+order_pocket = 6
+order_reddit = 7
+order_linkedin = 8
+order_wordpress = 9
+order_pinboard = 10
+order_email = 11
+theme = "flat_web_icon_set_color"
+==
+<div class="single_page_listing_style">
+		<div class="container-fluid p0">
+			<div class="row">
+				<div class="col-sm-6 col-lg-6 p0">
+					<div class="row m0">
+						<div class="col-lg-12 p0">
+							<div class="spls_style_one pr1 1px">
+								<img class="img-fluid w100" src="{{ data.srcimage }}" width="" height="" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-6 p0">
+					<div class="row m0">
+						{% for image in data.property_images.take(4) %}
+							<div class="col-sm-6 col-lg-6 p0">
+								<div class="spls_style_one">
+									<a class="popup-img" href="{{ image.path }}"><img class="img-fluid w100" src="{{ image.path }}" width="165" height="130" alt="2.jpg"></a>
+								</div>
+							</div>
+						{% endfor %}
+						<!-- <div class="col-sm-6 col-lg-6 p0">
+							<div class="spls_style_one">
+								{% for image in data.property_images %}
+									<a class="popup-img" href="{{ image.path }}">
+								{% endfor %}
+
+								{% for image in data.property_images.firstWhere(data.property_images, '>', 1) %}
+									<img class="img-fluid w100" src="{{ image.path }}" alt="7.jpg"></a>
+								{% endfor %}
+								<div class="overlay popup-img">
+									<h3 class="title">+</h3>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="p0">
+		<div class="container">
+			<div class="row listing_single_row">
+				<div class="col-sm-6 col-lg-7 col-xl-8">
+					<div class="single_property_title">
+						<a href="{ data.srcimage }}" class="upload_btn popup-img"><span class="flaticon-photo-camera"></span> View Photos</a>
+						
+						<br> 
+						<h5 style="margin-top:40px;" > Share on Social Media </h5>
+						{% component 'ssbuttonsssb' %}
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-5 col-xl-4">
+					<div class="single_property_social_share">
+						<div class="spss style2 mt10 text-right tal-400">
+							<ul class="mb0">
+								<li class="list-inline-item views"><a> {{ data.views }} <span class="flaticon-view"></span></a></li>
+								<li class="list-inline-item"><a href="#"><span class="flaticon-share"></span></a></li>
+								<li class="list-inline-item"><a href="#"><span class="flaticon-printer"></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="our-agent-single bgc-f7 pb30-991">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-8 mt50">
+					{% component 'propertydetails' %}
+				</div>
+				<div class="col-lg-4 col-xl-4 mt50">
+					<div class="sidebar_listing_list">
+						{% component 'filterform' %}
+					</div>
+					<!-- Feature Property -->
+					<!-- <div class="terms_condition_widget">
+						<h4 class="title">Featured Properties</h4>
+						
+					</div> -->
+					<div class="sidebar_feature_listing">
+						<h4 class="title">Latest News</h4>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

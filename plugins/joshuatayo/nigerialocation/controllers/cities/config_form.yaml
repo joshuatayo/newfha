@@ -1,0 +1,10 @@
+name: Cities
+form: $/joshuatayo/nigerialocation/models/city/fields.yaml
+modelClass: JoshuaTayo\NigeriaLocation\Models\City
+defaultRedirect: joshuatayo/nigerialocation/cities
+create:
+    redirect: 'joshuatayo/nigerialocation/cities/update/:id'
+    redirectClose: joshuatayo/nigerialocation/cities
+update:
+    redirect: joshuatayo/nigerialocation/cities
+    redirectClose: joshuatayo/nigerialocation/cities

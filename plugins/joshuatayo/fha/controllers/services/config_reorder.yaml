@@ -1,0 +1,4 @@
+title: Services
+modelClass: JoshuaTayo\Fha\Models\Service
+toolbar:
+    buttons: reorder_toolbar

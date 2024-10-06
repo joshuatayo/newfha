@@ -1,0 +1,62 @@
+plugin:
+    name: 'joshuatayo.fha::lang.plugin.name'
+    description: 'joshuatayo.fha::lang.plugin.description'
+    author: 'Joshua Tayo'
+    icon: oc-icon-gear
+    homepage: ''
+navigation:
+    federalhousingauthority:
+        label: 'Federal Housing Authority'
+        url: joshuatayo/fha/sliders
+        icon: icon-home
+        sideMenu:
+            slider:
+                label: Slider
+                url: joshuatayo/fha/sliders
+                icon: icon-sliders
+            galleries:
+                label: Galleries
+                url: joshuatayo/fha/galleries
+                icon: icon-picture-o
+            videos:
+                label: Videos
+                url: joshuatayo/fha/videos
+                icon: icon-video-camera
+            propertyprices:
+                label: 'Price Listing'
+                url: joshuatayo/fha/propertyprices
+                icon: icon-money
+            projects:
+                label: Projects
+                url: joshuatayo/fha/projects
+                icon: icon-stumbleupon-circle
+            services:
+                label: Services
+                url: joshuatayo/fha/services
+                icon: icon-slack
+            partners:
+                label: Partners
+                url: joshuatayo/fha/partners
+                icon: icon-paragraph
+    messages:
+        label: Messages
+        url: joshuatayo/fha/serviceforms
+        icon: icon-envelope
+        sideMenu:
+            serviceforms:
+                label: 'Submitted Form'
+                url: joshuatayo/fha/serviceforms
+                icon: icon-inbox
+            contactform:
+                label: 'Contact Form'
+                url: joshuatayo/fha/serviceforms
+                icon: icon-inbox
+    service_form:
+        label: 'Service Form'
+        url: joshuatayo/fha/serviceforms
+        icon: icon-server
+        sideMenu:
+            submitted_form:
+                label: 'Submitted Form'
+                url: joshuatayo/fha/serviceforms
+                icon: icon-inbox

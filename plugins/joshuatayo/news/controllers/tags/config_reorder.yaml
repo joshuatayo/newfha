@@ -1,0 +1,4 @@
+title: Tags
+modelClass: JoshuaTayo\News\Models\Tag
+toolbar:
+    buttons: reorder_toolbar

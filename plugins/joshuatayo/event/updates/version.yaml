@@ -1,0 +1,8 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table joshuatayo_event_events'
+    - builder_table_create_joshuatayo_event_events.php
+v1.0.3:
+    - 'Created table joshuatayo_event_categories'
+    - builder_table_create_joshuatayo_event_categories.php

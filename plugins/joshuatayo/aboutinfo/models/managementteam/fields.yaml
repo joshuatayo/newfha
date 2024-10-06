@@ -1,0 +1,50 @@
+fields:
+    team_members:
+        label: 'Management Team'
+        prompt: 'Add new team member'
+        displayMode: accordion
+        span: full
+        style: collapsed
+        type: repeater
+        form:
+            fields:
+                photo:
+                    label: Photo
+                    mode: image
+                    thumbOptions:
+                        mode: crop
+                        extension: auto
+                    span: full
+                    required: 1
+                    type: mediafinder
+                    commentAbove: 'Dimensions 270 × 270'
+                full_name:
+                    label: 'Full name'
+                    span: auto
+                    required: 1
+                    type: text
+                slug:
+                    label: Slug
+                    span: auto
+                    required: 1
+                    preset:
+                        field: full_name
+                        type: slug
+                    type: text
+                position:
+                    label: Position
+                    span: auto
+                    required: 1
+                    type: text
+                section:
+                    label: 'Display Section'
+                    span: auto
+                    showSearch: true
+                    required: 1
+                    emptyOption: '-- Select Display Section --'
+                    type: dropdown
+                profile:
+                    label: Profile
+                    span: full
+                    size: large
+                    type: richeditor

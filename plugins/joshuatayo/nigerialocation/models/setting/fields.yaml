@@ -1,0 +1,52 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        # Default Geopoliticalzone
+        default_geopoliticalzone:
+            span: left
+            label: Default Geopolitical Zone
+            comment: When a user does not specify their location, select a default geopoliticalzone to use.
+            type: dropdown
+            tab: location
+            placeholder: - no default 
+
+        # Default City
+        default_city:
+            span: right
+            label: Default City
+            comment: When a user does not specify their location, select a default city to use.
+            type: dropdown
+            tab: location
+            dependsOn: default_state
+            placeholder: - no default -
+
+        # Default State
+        default_state:
+            span: left
+            label: Default State
+            comment: When a user does not specify their location, select a default state to use.
+            type: dropdown
+            tab: location
+            dependsOn: default_geopoliticalzone
+            placeholder: - no default -
+        
+
+        # Default place
+        default_place:
+            span: right
+            label: Default Place
+            comment: When a user does not specify their location, select a default Place to use.
+            type: dropdown
+            tab: location
+            dependsOn: default_city
+            placeholder: - no default -
+        
+
+        # Google Maps API Key
+        google_maps_key:
+            label: Google Maps API Key
+            comment: If you plan on using Google Maps services, enter the API key for it here.
+            tab: credentials

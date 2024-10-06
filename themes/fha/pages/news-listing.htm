@@ -1,0 +1,83 @@
+title = "News listing"
+url = "/news-listing/:page?"
+layout = "layout"
+is_hidden = 0
+
+[posts]
+noPostMessage = "No post found"
+displayType = "listPost"
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 6
+detailPage = "newsdetails"
+sortField = "created_at"
+sortType = "desc"
+
+[searchform]
+
+[posts latestposts]
+noPostMessage = "No post found"
+displayType = "sidePost"
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 3
+sortField = "created_at"
+sortType = "desc"
+
+[propertylist]
+noPropertyMessage = "No properties found"
+displayType = "featureProperty"
+pageNumber = "{{ :page }}"
+itemsPerPage = 5
+sortField = "created_at"
+sortType = "desc"
+==
+<section class="inner_page_breadcrumb bg_page price_listing">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="{{ 'home'|page }}">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">News</li>
+						</ol>
+						<h1 class="breadcrumb_title">News</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="blog_post_container bgc-f7 pb30">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-title text-center">
+                    <img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+                    <h2 class="text-uppercase mt0">News</h2>
+                    <p>The latest from our activities.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="main_blog_post_content">
+                    {% component 'posts' %}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar_search_widget">
+                    {% component 'searchform' %}
+                </div>
+                <div class="sidebar_feature_listing">
+                    <h4 class="title">Latest News</h4>
+                    {% component 'latestposts' %}
+                </div>
+                <!-- <div class="terms_condition_widget">
+                                        <h4 class="title">Featured Properties</h4>
+                                        {% component 'propertylist' %}
+                                    </div> -->
+            </div>
+        </div>
+    </div>
+</section>

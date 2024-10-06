@@ -1,0 +1,10 @@
+name: Events
+form: $/joshuatayo/event/models/event/fields.yaml
+modelClass: JoshuaTayo\Event\Models\Event
+defaultRedirect: joshuatayo/event/events
+create:
+    redirect: 'joshuatayo/event/events/update/:id'
+    redirectClose: joshuatayo/event/events
+update:
+    redirect: joshuatayo/event/events
+    redirectClose: joshuatayo/event/events

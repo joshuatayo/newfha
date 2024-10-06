@@ -1,0 +1,37 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    name:
+        label: 'Floor Name'
+        span: auto
+        type: text
+        comment: 'Example: Ground Floor'
+    floor_size:
+        label: 'Floor Size'
+        span: auto
+        type: number
+        comment: 'Example: 2000'
+    bedroom:
+        label: Bedrooms
+        span: auto
+        type: number
+        comment: 'Example: 4'
+    bathroom:
+        label: Bathroom
+        span: auto
+        type: number
+        comment: 'Example: 2'
+    floor_plan_image:
+        label: 'Floor Plan Image'
+        span: full
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '100'
+        imageHeight: '100'
+        type: fileupload

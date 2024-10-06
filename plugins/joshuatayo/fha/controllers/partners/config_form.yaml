@@ -1,0 +1,10 @@
+name: Partners
+form: $/joshuatayo/fha/models/partner/fields.yaml
+modelClass: JoshuaTayo\Fha\Models\Partner
+defaultRedirect: joshuatayo/fha/partners
+create:
+    redirect: 'joshuatayo/fha/partners/update/:id'
+    redirectClose: joshuatayo/fha/partners
+update:
+    redirect: joshuatayo/fha/partners
+    redirectClose: joshuatayo/fha/partners

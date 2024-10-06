@@ -1,0 +1,23 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table joshuatayo_news_posts'
+    - builder_table_create_joshuatayo_news_posts.php
+1.0.3:
+    - 'Created table joshuatayo_news_categories'
+    - builder_table_create_joshuatayo_news_categories.php
+1.0.4:
+    - 'Created table joshuatayo_news_tags'
+    - builder_table_create_joshuatayo_news_tags.php
+1.0.5:
+    - 'Created table joshuatayo_news_posts_tags'
+    - builder_table_create_joshuatayo_news_posts_tags.php
+1.0.6:
+    - 'Created table joshuatayo_news_subscribers'
+    - builder_table_create_joshuatayo_news_subscribers.php
+1.0.7:
+    - 'Created table joshuatayo_news_comments'
+    - builder_table_create_joshuatayo_news_comments.php
+1.0.8:
+    - 'Updated table joshuatayo_news_posts'
+    - builder_table_update_joshuatayo_news_posts.php

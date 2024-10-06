@@ -1,0 +1,6 @@
+columns:
+    name:
+        label: 'Icon Name'
+        type: text
+        searchable: true
+        sortable: true

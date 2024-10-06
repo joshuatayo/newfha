@@ -1,0 +1,72 @@
+title = "Property Listing"
+url = "/property-listing/:page?"
+layout = "layout"
+is_hidden = 0
+
+[propertylist]
+noPropertyMessage = "No properties found"
+displayType = "listProperty"
+pageNumber = "{{ :page }}"
+itemsPerPage = 9
+detailPage = "property"
+searchPage = "property-listing"
+sortField = "created_at"
+sortType = "desc"
+
+[mappropertylist]
+mapTitle = "FHA Properties"
+mapStyle = "default"
+centerLat = 9.072264
+centerLng = 7.491302
+zoom = 9
+mapMarker = "./themes/fha/assets/images/map-marker/map-marker2.png"
+iconAnimation = "BOUNCE"
+iconXOffset = 0
+iconYOffset = 0
+detailPage = "property"
+thumbMode = "auto"
+thumbWidth = 640
+thumbHeight = 480
+
+[filterform]
+displayType = "largeFilter"
+filterPage = "property-listing"
+amenityList = 0
+==
+<section class="home-two p0 vh-85">
+		<div class="container-fluid p0">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="home_two_map">
+	                    {% component 'mappropertylist' %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<div class="container ">
+		<div class="row">
+			<div class="col-lg-12">
+				{% component 'filterform' %}
+			</div>
+		</div>
+	</div>
+
+	<section id="feature-property" class="our-listing bgc-f7 pb30-991">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb_content style2 text-center mb0-991">
+						<h2 class="breadcrumb_title text-uppercase">Property Listing</h2>
+						<p>The Federal Housing Authority delivers quality housing to Nigerians. These are a few of the latest properties</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+			        {% component 'propertylist' %}
+				</div>
+			</div>
+		</div>
+	</section>

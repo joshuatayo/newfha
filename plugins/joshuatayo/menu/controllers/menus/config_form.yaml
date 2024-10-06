@@ -1,0 +1,10 @@
+name: Menus
+form: $/joshuatayo/menu/models/menu/fields.yaml
+modelClass: JoshuaTayo\Menu\Models\Menu
+defaultRedirect: joshuatayo/menu/menus
+create:
+    redirect: 'joshuatayo/menu/menus/update/:id'
+    redirectClose: joshuatayo/menu/menus
+update:
+    redirect: joshuatayo/menu/menus
+    redirectClose: joshuatayo/menu/menus

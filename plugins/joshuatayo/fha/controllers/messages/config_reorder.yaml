@@ -1,0 +1,4 @@
+title: Messages
+modelClass: JoshuaTayo\Fha\Models\Message
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,19 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    name:
+        label: Name
+        span: auto
+        type: text
+    code:
+        label: Code
+        span: auto
+        type: text
+        comment: 'Enter a unique code to identify this Geopolitical Zone.'
+    # states:
+    #     span: full
+    #     path: $/joshtayo/nigerialocation/models/geopoliticalzone/_states.htm
+    #     type: partial

@@ -1,0 +1,12 @@
+<div class="sidebar_search_widget">
+    <div class="blog_search_widget">
+        {{ form_open({ url: __SELF__.searchPage, method: 'GET'}) }}
+        <div class="input-group">
+        <input type="text" name="search" class="form-control" placeholder="Search Here" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><span class="flaticon-magnifying-glass"></span></button>
+        </div>
+        </div>
+        {{ form_close() }}<!-- /.sidebar__search-form -->
+    </div>
+</div>

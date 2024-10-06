@@ -1,0 +1,4 @@
+title: Categories
+modelClass: JoshuaTayo\News\Models\Category
+toolbar:
+    buttons: reorder_toolbar

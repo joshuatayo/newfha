@@ -1,0 +1,4 @@
+title: Icons
+modelClass: JoshuaTayo\Property\Models\Icon
+toolbar:
+    buttons: reorder_toolbar

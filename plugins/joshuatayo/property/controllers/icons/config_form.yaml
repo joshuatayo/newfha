@@ -1,0 +1,10 @@
+name: Icons
+form: $/joshuatayo/property/models/icon/fields.yaml
+modelClass: JoshuaTayo\Property\Models\Icon
+defaultRedirect: joshuatayo/property/icons
+create:
+    redirect: 'joshuatayo/property/icons/update/:id'
+    redirectClose: joshuatayo/property/icons
+update:
+    redirect: joshuatayo/property/icons
+    redirectClose: joshuatayo/property/icons

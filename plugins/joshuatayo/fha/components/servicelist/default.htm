@@ -1,0 +1,54 @@
+{% set services = __SELF__.services %}
+
+{% for service in __SELF__.services %}
+<div class="col-md-6 col-lg-4">
+	<div class="properti_city home6">
+		<div class="thumb">
+			<img class="img-fluid w100" src="{{ service.srcimage }}" width="360" height="370" alt="{{ service.id }}.png"> 
+				<div class="thmb_cntnt">
+				    
+					<ul class="tag mb0">
+						<li class="list-inline-item"><a href="{{ service.service_file.path }}" target="_blank">Download Form<span class="flaticon-download"></span></a></li>
+					</ul>
+					
+				</div>
+			</div>
+			<div class="overlay">
+			<div class="details">
+				<a href="{{ service.url }}">
+				    <h3 style="color:black;">( Click Here to Submit Application )</h3>
+					<h4>{{ service.title }}</h4>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% else %}
+    <span class="service-nodata text-center">{{ noServiceMessage }}</span>
+{% endfor %}
+
+<div class="col-lg-12 mt20">
+	<div class="mbp_pagination">
+		{% if services.lastPage > 1 %}
+		<ul class="page_navigation">
+			{% if services.currentPage > 1 %}
+			<li class="page-item">
+				<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (services.currentPage-1) }) }}"> <span class="flaticon-left-arrow"></span> Prev</a>
+			</li>
+			{% endif %}
+
+			{% for page in 1..services.lastPage %}
+			<li class="page-item {{ services.currentPage == page ? 'active' : null }}" aria-current="{{ services.currentPage == page ? 'page' : null }}">
+				<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+			</li>
+			{% endfor %}
+
+			{% if services.lastPage > services.currentPage %}
+				<li class="page-item">
+				   	<a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (services.currentPage+1) }) }}"><span class="flaticon-right-arrow"></span></a>
+			</li>
+		    {% endif %}
+		</ul>
+		{% endif %}
+	</div>
+</div>

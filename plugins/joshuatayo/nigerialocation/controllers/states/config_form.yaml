@@ -1,0 +1,10 @@
+name: States
+form: $/joshuatayo/nigerialocation/models/state/fields.yaml
+modelClass: JoshuaTayo\NigeriaLocation\Models\State
+defaultRedirect: joshuatayo/nigerialocation/states
+create:
+    redirect: 'joshuatayo/nigerialocation/states/update/:id'
+    redirectClose: joshuatayo/nigerialocation/states
+update:
+    redirect: joshuatayo/nigerialocation/states
+    redirectClose: joshuatayo/nigerialocation/states

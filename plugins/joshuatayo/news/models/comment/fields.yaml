@@ -1,0 +1,21 @@
+fields:
+    post:
+        label: Relation
+        nameFrom: title
+        descriptionFrom: description
+        emptyOption: '- Post --'
+        span: auto
+        type: relation
+    parent_id:
+        label: 'Parent Id'
+        span: auto
+        type: text
+    name:
+        label: 'Full Name'
+        span: auto
+        type: text
+    content:
+        label: Comment
+        span: auto
+        size: large
+        type: textarea

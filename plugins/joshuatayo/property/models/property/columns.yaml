@@ -1,0 +1,15 @@
+columns:
+    property_ref:
+        label: 'Property No'
+        type: text
+        searchable: true
+        sortable: true
+    title:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    view:
+        label: View
+        type: number
+        sortable: true

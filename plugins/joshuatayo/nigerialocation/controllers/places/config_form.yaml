@@ -1,0 +1,10 @@
+name: Places
+form: $/joshuatayo/nigerialocation/models/place/fields.yaml
+modelClass: JoshuaTayo\NigeriaLocation\Models\Place
+defaultRedirect: joshuatayo/nigerialocation/places
+create:
+    redirect: 'joshuatayo/nigerialocation/places/update/:id'
+    redirectClose: joshuatayo/nigerialocation/places
+update:
+    redirect: joshuatayo/nigerialocation/places
+    redirectClose: joshuatayo/nigerialocation/places

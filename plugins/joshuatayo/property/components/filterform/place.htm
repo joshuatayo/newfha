@@ -1,0 +1,8 @@
+{% set cityId = form_value(type ~ 'city') %}
+                                    {% set placeId = form_value(type ~ 'place') %}
+            {% set id = type ~ 'place' %}
+            {{ form_select_place(id, cityId, placeId, {
+                class: 'selectpicker w100 show-tick',
+                id: id,
+                emptyOption: 'Place',
+            }) }}

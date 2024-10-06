@@ -1,0 +1,20 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    name:
+        label: Name
+        span: auto
+        type: text
+    state:
+        label: State
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+    places:
+        span: full
+        path: $/joshuatayo/nigerialocation/models/city/_places.htm
+        type: partial

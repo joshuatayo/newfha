@@ -1,0 +1,10 @@
+name: Subscribers
+form: $/joshuatayo/news/models/subscriber/fields.yaml
+modelClass: JoshuaTayo\News\Models\Subscriber
+defaultRedirect: joshuatayo/news/subscribers
+create:
+    redirect: 'joshuatayo/news/subscribers/update/:id'
+    redirectClose: joshuatayo/news/subscribers
+update:
+    redirect: joshuatayo/news/subscribers
+    redirectClose: joshuatayo/news/subscribers

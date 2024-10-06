@@ -1,0 +1,4 @@
+title: Subscribers
+modelClass: JoshuaTayo\News\Models\Subscriber
+toolbar:
+    buttons: reorder_toolbar

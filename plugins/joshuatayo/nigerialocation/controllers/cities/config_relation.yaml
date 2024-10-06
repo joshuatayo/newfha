@@ -1,0 +1,9 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+places:
+    label: Place
+    list: ~/plugins/joshuatayo/nigerialocation/models/place/columns.yaml
+    form: ~/plugins/joshuatayo/nigerialocation/models/place/fields.yaml
+    emptyMessage: no records

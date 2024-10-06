@@ -1,0 +1,125 @@
+{% set item = __SELF__.data %}
+<!-- Listing Single Property -->
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="listing_single_description2 mt30-767 mb30-767">
+				<div class="single_property_title">
+					<h2>{{ item.title }}</h2>
+					<p>{{ item.type.name }}</p>
+					<p><span class="flaticon-placeholder"></span> 
+						{{ item.address }}
+						{% if item.place %}, {{ item.place.name }}{% endif %}
+						{% if item.city.name %}, {{ item.city.name }}{% endif %}
+						{% if item.postcode %}, {{ item.postcode }}{% endif %}
+						{% if item.state %}, {{ item.state.name }}{% endif %}.
+					</p>
+				</div>
+				<div class="single_property_social_share style2" style="margin-top:50px;">
+					<div class="price">
+						<h2>₦{{ item.formatPrice }}</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="listing_single_description style2">
+				<div class="lsd_list">
+					<ul class="mb0">
+						<li class="list-inline-item"><a class="text-uppercase"><span class="fa fa-user"></span> : {{ item.property_ref }}</a></li>
+						{% for feature in item.features %}
+                            <li class="list-inline-item"><a><span class="{{ feature.icon.svg }}"></span> : {{ feature.value }} {{ feature.name }} </a></li>
+                        {% endfor %}
+					</ul>
+				</div>
+				<h4 class="mb30">Description</h4>
+				<p class="mb15">{{ item.short_description|raw }}</p>
+				{% if item.description %}
+					<div class="collapse" id="collapseExample">
+						<div class="card card-body">
+							<p class="mt5 mb5">{{ item.description|raw }}</p>
+						</div>
+					</div>
+					<p class="overlay_close">
+						<a class="text-thm fz14" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Show More <span class="flaticon-download-1 fz12"></span></a>
+					</p>
+				{% endif%}
+			</div>				
+		</div>
+		{% if item.amenities.count %}
+			<div class="col-lg-12">
+				<div class="application_statics">
+					<div class="row">
+						<div class="col-lg-12">
+							<h4 class="mb10">Amenities</h4>
+						</div>
+						{% for chunk in item.amenities.chunk(5) %}
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<ul class="order_list list-inline-item">
+									{% for amenity in chunk %}
+										<li><a href="#"><span class="flaticon-tick"></span>{{ amenity.name }}</a></li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		{% if item.floorplans.count %}
+			<div class="col-lg-12">
+				<div class="application_statics mt30">
+					<h4 class="mb30">Floor plans</h4>
+					<div class="faq_according style2">
+						<div class="accordion" id="accordionExample">
+							{% for floorplan in item.floorplans %}
+								<div class="card floor_plan">
+								    <div class="card-header {% if loop.first %}active{% endif %}" id="heading{{ floorplan.id }}">
+								    	<h2 class="mb-0">
+										   	<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ floorplan.id }}" aria-expanded="true" aria-controls="collapse{{ floorplan.id }}">
+										    	<ul class="mb0">
+										        	<li class="list-inline-item">{{ floorplan.name }}</li>
+										        	<li class="list-inline-item"><p>Size:</p> <span>{{ floorplan.floor_size }} Sqft</span></li>
+										        	<li class="list-inline-item"><p>Bedrooms:</p> <span>{{ floorplan.bedroom }}</span></li>
+										        	<li class="list-inline-item"><p>Bathrooms:</p> <span>{{ floorplan.bathroom }}</span></li>
+										        </ul>
+										    </button>
+										</h2>
+									</div>
+									<div id="collapse{{ floorplan.id }}" class="collapse {% if loop.first %}show{% endif %}" aria-labelledby="heading{{ floorplan.id }}" data-parent="#accordionExample" style="">
+										<div class="card-body text-center">
+											<img class="img-fluid" src="{{ floorplan.srcimage }}" alt="{{ floorplan.id }}.png">
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		{% if item.latitude and item.longitude %}
+			<div class="col-lg-12">
+				<div class="application_statics mt30">
+					<h4 class="mb30">Location <small class="float-right">{{ item.address }}
+						{% if item.place %}, {{ item.place.name }}{% endif %}
+						{% if item.city.name %}, {{ item.city.name }}{% endif %}
+						{% if item.postcode %}, {{ item.postcode }}{% endif %}
+						{% if item.state %}, {{ item.state.name }}{% endif %}.</small></h4>
+					<div class="property_video p0">
+						<div class="thumb">
+							<div class="h400" id="map-canvass">
+								<iframe
+							 		width="100%"
+									height="100%"
+									frameborder="0" style="border:0"
+									src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&q={{ item.latitude }}, 
+									{{ item.longitude }}" allowfullscreen>
+								</iframe>
+							</div>
+						</div>
+					</div>			
+				</div>
+			</div>
+		{% endif %}
+	</div>
+	

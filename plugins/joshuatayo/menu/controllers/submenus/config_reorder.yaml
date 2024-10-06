@@ -1,0 +1,4 @@
+title: Submenus
+modelClass: JoshuaTayo\Menu\Models\Submenu
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,65 @@
+tabs:
+    fields:
+        content:
+            label: Content
+            size: huge
+            span: full
+            type: richeditor
+            tab: 'Content Tab'
+        documents:
+            label: Documents
+            prompt: 'Add new item'
+            displayMode: accordion
+            span: full
+            type: repeater
+            tab: 'Documents Tab'
+            form:
+                fields:
+                    name:
+                        label: Name
+                        span: auto
+                        type: text
+                    document:
+                        label: Document
+                        mode: file
+                        thumbOptions:
+                            mode: crop
+                            extension: auto
+                        span: auto
+                        type: mediafinder
+fields:
+    is_enabled:
+        label: 'Is enabled'
+        span: full
+        default: 1
+        type: checkbox
+    title:
+        label: Title
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        required: 1
+        preset:
+            field: title
+            type: slug
+        type: text
+    category:
+        label: Category
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        emptyOption: '-- Select Category --'
+        type: relation
+    date_added:
+        label: 'Date added'
+        mode: datetime
+        span: auto
+        type: datepicker
+    deadline:
+        label: Deadline
+        mode: datetime
+        span: auto
+        type: datepicker

@@ -1,0 +1,10 @@
+fields:
+    status:
+        label: Status
+        span: full
+        type: switch
+    email:
+        label: Email
+        span: full
+        required: 1
+        type: text

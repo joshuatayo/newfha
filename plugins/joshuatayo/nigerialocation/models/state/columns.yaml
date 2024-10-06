@@ -1,0 +1,20 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    code:
+        label: Code
+        type: text
+        searchable: true
+        sortable: true
+    is_enabled:
+        label: Enabled
+        type: number
+        sortable: true
+    geopoliticalzoneCode:
+        label: 'Geopolitical zone  Code'
+        type: text
+        searchable: true
+        sortable: true

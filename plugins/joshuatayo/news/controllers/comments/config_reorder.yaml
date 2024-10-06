@@ -1,0 +1,4 @@
+title: Comments
+modelClass: JoshuaTayo\News\Models\Comment
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,21 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    eventsCount:
+        label: 'No of Events'
+        type: number
+        sortable: true
+    is_enabled:
+        label: Enabled
+        type: switch
+    created_at:
+        label: 'Created At'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'Updated At'
+        type: datetime
+        sortable: true

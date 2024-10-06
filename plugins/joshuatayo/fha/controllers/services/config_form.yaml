@@ -1,0 +1,10 @@
+name: Services
+form: $/joshuatayo/fha/models/service/fields.yaml
+modelClass: JoshuaTayo\Fha\Models\Service
+defaultRedirect: joshuatayo/fha/services
+create:
+    redirect: 'joshuatayo/fha/services/update/:id'
+    redirectClose: joshuatayo/fha/services
+update:
+    redirect: joshuatayo/fha/services
+    redirectClose: joshuatayo/fha/services

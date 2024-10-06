@@ -1,0 +1,43 @@
+fields:
+    is_enabled:
+        label: Eanbled
+        span: full
+        default: 1
+        type: checkbox
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: small
+        span: full
+        type: textarea
+    propertyprice_image:
+        label: 'File Image'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    propertyprice_file:
+        label: 'File upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+        comment: 'Price Pdf File'

@@ -1,0 +1,32 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table joshuatayo_property_types'
+    - builder_table_create_joshuatayo_property_types.php
+1.0.3:
+    - 'Created table joshuatayo_property_status'
+    - builder_table_create_joshuatayo_property_status.php
+1.0.4:
+    - 'Created table joshuatayo_property_amenities'
+    - builder_table_create_joshuatayo_property_amenities.php
+1.0.5:
+    - 'Created table joshuatayo_property_properties'
+    - builder_table_create_joshuatayo_property_properties.php
+1.0.6:
+    - 'Created table joshuatayo_property_properties_amenities'
+    - builder_table_create_joshuatayo_property_properties_amenities.php
+1.0.7:
+    - 'Created table joshuatayo_property_features'
+    - builder_table_create_joshuatayo_property_features.php
+1.0.8:
+    - 'Created table joshuatayo_property_icons'
+    - builder_table_create_joshuatayo_property_icons.php
+1.0.9:
+    - 'Created table joshuatayo_property_floorplans'
+    - builder_table_create_joshuatayo_property_floorplans.php
+1.0.10:
+    - 'Created table joshuatayo_property_bedrooms'
+    - builder_table_create_joshuatayo_property_bedrooms.php
+1.0.11:
+    - 'Created table joshuatayo_property_bathrooms'
+    - builder_table_create_joshuatayo_property_bathrooms.php

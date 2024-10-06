@@ -1,0 +1,117 @@
+url = "/procurement-advert/:slug"
+layout = "layout"
+title = "Procurement Advert"
+
+[advertDetails]
+slug = "{{ :slug }}"
+categoryPage = "procurement-adverts"
+
+[advertSearchForm]
+searchPage = "procurement-adverts"
+
+[advertCategoryList]
+categoryPage = "procurement-adverts"
+==
+<section class="inner_page_breadcrumb bg_page adverts">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="breadcrumb_content">
+                    <p>Procurement Advert</p>
+                    <h1 class="breadcrumb_title">Procurement Advert</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="our-agent-single bgc-f7 pb30-991 pt30 pb30">
+    <div class="container pb30">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-title text-center">
+                    <img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+                    <h3 class="text-uppercase mt0">{{ advert.title }}</h3>
+                    <p>Procurement Advert</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="listing_single_description2 mt30-767 mb30-767">
+                            <div class="single_property_title">
+                                <h4>{{ advert.title }}</h4>
+                                <div class="lsd_list mb0">
+									<ul class="mb0">
+                                        {% if advert.category %}
+										    <li class="list-inline-item"><a href="{{ advert.category.url }}">{{ advert.category.name }}</a></li>
+                                        {% endif %}
+										<li class="list-inline-item">Date Added - {{ advert.date_added|date('d/m/Y') }}</li>
+										<li class="list-inline-item">Deadline - {{ advert.deadline|date('d/m/Y') }}</li>
+									</ul>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if advert.content or advert.documents %}
+                    <div class="col-lg-12">
+                        <div class="shop_single_tab_content style2 mt30">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                {% if advert.content %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="content-tab" data-toggle="tab" href="#content" role="tab" aria-controls="content" aria-selected="true">Description</a>
+                                </li>
+                                {% endif %}
+                                {% if advert.documents %}
+                                <li class="nav-item">
+                                    <a class="nav-link {% if not advert.content %} active {% endif %}" id="documents-tab" data-toggle="tab" href="#documents" role="tab" aria-controls="documents" aria-selected="false">Documents</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                            <div class="tab-content" id="myTabContent2">
+                                {% if advert.content %}
+                                    <div class="tab-pane fade show active" id="content" role="tabpanel" aria-labelledby="content-tab">
+                                        <div class="content-text m30">
+                                            {{ advert.content|raw }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if advert.documents is not empty %}
+                                <div class="tab-pane fade {% if not advert.content %} show active {% endif %}" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+                                    <div class="documents m30">
+                                        {% for document in advert.documents %}
+                                        <div class="icon_box_area">
+                                            <div class="details">
+                                                <h5><a href="{{ document.document|media }}" download><span class="flaticon-download text-thm pr10"></span> {{ document.name }}</a></h5>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                {% component 'advertSearchForm' %}
+                {% if categories is not empty %}
+                    <div class="terms_condition_widget">
+                        <h4 class="title">Procurement Advert Categories</h4>
+                        <div class="widget_list">
+                            <ul class="list_details">
+                                {% for category in categories %}
+                                <li><a href="{{ category.url }}"><i class="fa fa-caret-right mr10"></i>{{ category.name }} <span class="float-right">{{ category.advertsCount }} Adverts</span></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,10 @@
+name: Geopoliticalzones
+form: $/joshuatayo/nigerialocation/models/geopoliticalzone/fields.yaml
+modelClass: JoshuaTayo\NigeriaLocation\Models\Geopoliticalzone
+defaultRedirect: joshuatayo/nigerialocation/geopoliticalzones
+create:
+    redirect: 'joshuatayo/nigerialocation/geopoliticalzones/update/:id'
+    redirectClose: joshuatayo/nigerialocation/geopoliticalzones
+update:
+    redirect: joshuatayo/nigerialocation/geopoliticalzones
+    redirectClose: joshuatayo/nigerialocation/geopoliticalzones

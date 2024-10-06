@@ -1,0 +1,50 @@
+    {% set post = __SELF__.post %}
+        <div class="mbp_thumb_post">
+            {% if post.category.name %}<div class="blog_sp_tag mb-3"><a>{{ post.category.name }}</a></div>{% endif %}
+            <h3 class="blog_sp_title mb-2">{{ post.title }}</h3>
+            <ul class="blog_sp_post_meta">
+                <li class="list-inline-item"><span class="flaticon-calendar"></span></li>
+                <li class="list-inline-item">{{ post.published_at|date('M d, Y') }}</li>
+                {% if post.views %}
+                    <li class="list-inline-item"><span class="flaticon-view"></span></li>
+                    <li class="list-inline-item">{{ post.views }} <span>views</span></li>
+                {% endif %}
+                {% if(__SELF__.count) > 0 %}
+                    <li class="list-inline-item"><span class="flaticon-chat"></span></li>
+                    <li class="list-inline-item"><a id="comments-count">{{ __SELF__.count }}</a></li>
+                    <!-- <h4><span id="flaticon-chat"></span><span id="comments-count">{{ __SELF__.count }}</span> Comments</h4> -->
+                {% endif %}
+            </ul>
+            <div class="thumb">
+                <img class="img-fluid" src="{{ post.post_image.path }}" alt="bs1.jpg">
+            </div>
+            <div class="details">
+                {{ post.content|raw }}
+            </div>
+            <ul class="blog_post_share">
+                <li><p>Share</p></li>
+                <li><a href="https://www.facebook.com/sharer.php?u={{url}}"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/share?url={{url}}&text={{ this.page.title }}"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+        <div class="mbp_pagination_tab">
+            <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    {% if post.prev().title %}
+                        <div class="pag_prev">
+                            <a href="{{ post.prev().slug }}"><span class="flaticon-back"></span></a>
+                            <div class="detls"><h5>Previous Post</h5> <p>{{ str_limit(post.prev().title , 20) }}</p></div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    {% if post.next().title %}
+                        <div class="pag_next text-right">
+                            <a href="{{ post.next().slug }}"><span class="flaticon-next"></span></a>
+                            <div class="detls"><h5>Next Post</h5> <p>{{ str_limit(post.next().title , 20) }}</p></div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    

@@ -1,0 +1,4 @@
+title: Menus
+modelClass: JoshuaTayo\Menu\Models\Menu
+toolbar:
+    buttons: reorder_toolbar

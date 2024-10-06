@@ -1,0 +1,36 @@
+plugin:
+    name: 'joshuatayo.procurementadvert::lang.plugin.name'
+    description: 'joshuatayo.procurementadvert::lang.plugin.description'
+    author: 'Joshua Tayo'
+    icon: oc-icon-file-text
+    homepage: ''
+permissions:
+    joshuatayo.procurementadvert.manage_procurementadvert:
+        tab: 'joshuatayo.procurementadvert::lang.plugin.name'
+        label: 'Manage Procurement Advert'
+    joshuatayo.procurementadvert.manage_procurementadvert.access_adverts:
+        tab: 'joshuatayo.procurementadvert::lang.plugin.name'
+        label: 'Access Advert'
+    joshuatayo.procurementadvert.manage_procurementadvert.access_categories:
+        tab: 'joshuatayo.procurementadvert::lang.plugin.name'
+        label: 'Access Categories'
+navigation:
+    procurement-advert-menu:
+        label: 'Procurement Advert'
+        url: /
+        icon: icon-file-text
+        permissions:
+            - joshuatayo.procurementadvert.manage_procurementadvert
+        sideMenu:
+            adverts:
+                label: Adverts
+                url: joshuatayo/procurementadvert/adverts
+                icon: icon-files-o
+                permissions:
+                    - joshuatayo.procurementadvert.manage_procurementadvert.access_adverts
+            categories:
+                label: Categories
+                url: joshuatayo/procurementadvert/categories
+                icon: icon-sitemap
+                permissions:
+                    - joshuatayo.procurementadvert.manage_procurementadvert.access_categories

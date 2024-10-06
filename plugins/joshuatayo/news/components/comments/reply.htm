@@ -1,0 +1,18 @@
+{% if post.children %}
+        <ul>
+            {% partial "comments::reply" posts=post.children %}
+        </ul>
+    {% endif %}
+{% for post in posts %}
+<div class="mbp_first media" id="comment-{{post.id}}">
+    <img src="images/testimonial/1.png" class="mr-3" alt="1.png">
+    <div class="media-body">
+        <h4 class="sub_title mt-0">{{post.name}}</h4>
+        <a class="sspd_postdate fz14" href="#comment-{{post.id}}">{{post.created_at.diffForHumans}}</a>
+        <p class="fz14 mt10">{{post.content|raw}}</p>
+        <div class="comment-footer">
+            <a class="comment-reply" onclick="Comment.replay(event,'{{post.id}}')">Reply</a>
+        </div>
+    </div>
+</div>
+{% endfor %}

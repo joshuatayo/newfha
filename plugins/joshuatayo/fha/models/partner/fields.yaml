@@ -1,0 +1,21 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: auto
+        default: 1
+        type: checkbox
+    name:
+        label: Name
+        span: auto
+        type: text
+    partner_logo:
+        label: 'Partner Logo'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '100'
+        imageHeight: '100'
+        type: fileupload

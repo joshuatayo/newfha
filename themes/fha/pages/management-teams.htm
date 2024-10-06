@@ -1,0 +1,63 @@
+url = "/management-teams"
+layout = "layout"
+title = "Management Teams"
+
+[managementTeamList]
+noManagementTeamMessage = "No Management Team found"
+detailPage = "management-team"
+==
+<section class="inner_page_breadcrumb bg_page services">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="{{ 'home'|page }}">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Management Teams</li>
+						</ol>
+						<h1 class="breadcrumb_title">Management Teams</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<section class="our-listing bgc-f7 pt30 pb30">
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-title text-center">
+                    <img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+                    <h2 class="text-uppercase mt0">Management Teams</h2>
+                    <p>Management Teams of FHA</p>
+                </div>
+            </div>
+        </div>
+        {% if managementTeams is not empty %}
+            {% for key, section in sectionOptions %}
+                {% set filteredManagementTeams = managementTeams|filter(managementTeam => managementTeam.section == key) %}
+                {% if filteredManagementTeams|length > 0 %}
+                <div class="row justify-content-center">
+                    {% for managementTeam in managementTeams %}
+                        {% if managementTeam.section == key %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="feat_property home7 agent">
+                                    <div class="thumb">
+                                        <img class="img-whp" src="{{ managementTeam.photo|media }}" alt="{{ managementTeam.full_name }}">
+                                    </div>
+                                    <div class="details">
+                                        <div class="tc_content">
+                                            <a {% if managementTeam.profile %}href="{{ detailPage|page({ slug: managementTeam.slug }) }}"{% endif %}><h4>{{ managementTeam.full_name }}</h4></a>
+                                            <p class="text-thm">{{ managementTeam.position }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>

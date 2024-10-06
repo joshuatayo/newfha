@@ -1,0 +1,36 @@
+plugin:
+    name: 'joshuatayo.event::lang.plugin.name'
+    description: 'joshuatayo.event::lang.plugin.description'
+    author: 'Joshua Tayo'
+    icon: oc-icon-adjust
+    homepage: ''
+permissions:
+    joshuatayo.event.manage_events:
+        tab: 'joshuatayo.event::lang.plugin.name'
+        label: 'Manage Events'
+    joshuatayo.event.manage_events.access_events:
+        tab: 'joshuatayo.event::lang.plugin.name'
+        label: 'Access Events'
+    joshuatayo.event.manage_events.access_categories:
+        tab: 'joshuatayo.event::lang.plugin.name'
+        label: 'Access Categories'
+navigation:
+    manage-events:
+        label: Events
+        url: /
+        icon: icon-life-ring
+        permissions:
+            - joshuatayo.event.manage_events
+        sideMenu:
+            events:
+                label: Events
+                url: joshuatayo/event/events
+                icon: icon-sitemap
+                permissions:
+                    - joshuatayo.event.manage_events.access_events
+            categories:
+                label: Categories
+                url: joshuatayo/event/categories
+                icon: icon-sitemap
+                permissions:
+                    - joshuatayo.event.manage_events.access_categories

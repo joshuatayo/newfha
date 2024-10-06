@@ -1,0 +1,10 @@
+name: Messages
+form: $/joshuatayo/fha/models/message/fields.yaml
+modelClass: JoshuaTayo\Fha\Models\Message
+defaultRedirect: joshuatayo/fha/messages
+create:
+    redirect: 'joshuatayo/fha/messages/update/:id'
+    redirectClose: joshuatayo/fha/messages
+update:
+    redirect: joshuatayo/fha/messages
+    redirectClose: joshuatayo/fha/messages

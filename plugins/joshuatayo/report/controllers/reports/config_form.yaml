@@ -1,0 +1,10 @@
+name: Reports
+form: $/joshuatayo/report/models/report/fields.yaml
+modelClass: JoshuaTayo\Report\Models\Report
+defaultRedirect: joshuatayo/report/reports
+create:
+    redirect: 'joshuatayo/report/reports/update/:id'
+    redirectClose: joshuatayo/report/reports
+update:
+    redirect: joshuatayo/report/reports
+    redirectClose: joshuatayo/report/reports

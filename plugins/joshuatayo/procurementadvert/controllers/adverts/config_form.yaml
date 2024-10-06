@@ -1,0 +1,10 @@
+name: Adverts
+form: $/joshuatayo/procurementadvert/models/advert/fields.yaml
+modelClass: JoshuaTayo\ProcurementAdvert\Models\Advert
+defaultRedirect: joshuatayo/procurementadvert/adverts
+create:
+    redirect: 'joshuatayo/procurementadvert/adverts/update/:id'
+    redirectClose: joshuatayo/procurementadvert/adverts
+update:
+    redirect: joshuatayo/procurementadvert/adverts
+    redirectClose: joshuatayo/procurementadvert/adverts

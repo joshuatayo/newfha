@@ -1,0 +1,10 @@
+name: Projects
+form: $/joshuatayo/fha/models/project/fields.yaml
+modelClass: JoshuaTayo\Fha\Models\Project
+defaultRedirect: joshuatayo/fha/projects
+create:
+    redirect: 'joshuatayo/fha/projects/update/:id'
+    redirectClose: joshuatayo/fha/projects
+update:
+    redirect: joshuatayo/fha/projects
+    redirectClose: joshuatayo/fha/projects

@@ -1,0 +1,32 @@
+plugin:
+    name: 'joshuatayo.news::lang.plugin.name'
+    description: 'joshuatayo.news::lang.plugin.description'
+    author: 'Joshua Tayo'
+    icon: oc-icon-newspaper-o
+    homepage: ''
+navigation:
+    News:
+        label: News
+        url: joshuatayo/news/posts
+        icon: icon-newspaper-o
+        sideMenu:
+            posts:
+                label: Posts
+                url: joshuatayo/news/posts
+                icon: icon-file-text-o
+            category:
+                label: Category
+                url: joshuatayo/news/categories
+                icon: icon-sitemap
+            comments:
+                label: Comments
+                url: joshuatayo/news/comments
+                icon: icon-comment
+            subscribers:
+                label: Subscribers
+                url: joshuatayo/news/subscribers
+                icon: icon-users
+            tags:
+                label: Tags
+                url: joshuatayo/news/tags
+                icon: icon-tags

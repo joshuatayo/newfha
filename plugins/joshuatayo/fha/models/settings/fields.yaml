@@ -1,0 +1,89 @@
+tabs:
+  fields:
+
+    form_settings.section:
+            label: Settings
+            type: section
+            tab: Email
+
+    redirect_to_page:
+            span: left
+            label: Redirect
+            commentAbove: Enable redirect page after successful form submit
+            type: switch
+            tab: Email
+
+    redirect_to_url:
+                    span: right
+                    label: Select Redirect Page
+                    commentAbove: Select the page from drop down where to redirect after successful form submit
+                    type: dropdown
+                    tab: Email
+
+    success_message:
+                  span: left
+                  label: Success Message Alert
+                  commentAbove: After successful form submit this success message will be displayed
+                  type: text
+                  tab: Email
+
+    text_top_form:
+                label: Form heading
+                commentAbove: This text will appear on top of form
+                type: textarea
+                size: small
+                tab: Email
+
+    form_mail_settings.section:
+                label: Mail Settings
+                type: section
+                tab: Email
+
+    recieve_notification:
+          span: left
+          label: Notification
+          commentAbove: Send mail notification to you when contact form submitted
+          type: switch
+          tab: Email
+
+    auto_reply:
+            span: right
+            label: Auto Reply
+            commentAbove: Send auto reply mail to user who submitted contact us form.
+            type: switch
+            tab: Email
+
+    notification_email_address:
+             label: Notification Email Address
+             commentAbove: Email address where notification mail will be sent
+             span: left
+             type: text
+             tab: Email
+
+    recaptcha_settings.section:
+        label: reCAPTCHA Settings
+        type: section
+        comment: Show or Hide reCAPTCHA on contact us form
+        tab: Email
+
+    recaptcha_enabled:
+        label: reCAPTCHA
+        commentAbove: Display reCAPTCHA widget on the form
+        type: switch
+        tab: Email
+
+    site_key:
+        label: Site Key
+        commentAbove: Your site key provided by google
+        span: left
+        type: text
+        tab: Email
+
+    secret_key:
+        label: Secret Key
+        commentAbove: Your secret key provided by google
+        span: right
+        type: text
+        tab: Email
+
+

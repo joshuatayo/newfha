@@ -1,0 +1,10 @@
+name: Bathrooms
+form: $/joshuatayo/property/models/bathroom/fields.yaml
+modelClass: JoshuaTayo\Property\Models\Bathroom
+defaultRedirect: joshuatayo/property/bathrooms
+create:
+    redirect: 'joshuatayo/property/bathrooms/update/:id'
+    redirectClose: joshuatayo/property/bathrooms
+update:
+    redirect: joshuatayo/property/bathrooms
+    redirectClose: joshuatayo/property/bathrooms

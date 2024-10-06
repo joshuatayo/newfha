@@ -1,0 +1,112 @@
+{% set posts = __SELF__.posts %}
+{% if __SELF__.displayType == 'latestPost' %}
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="for_blog feat_property">
+                    <div class="thumb">
+                        <img class="img-whp" src="{{ post.post_image.path }}" width="340" height="230" alt="{{ post.id }}">
+                        <div class="thmb_cntnt">
+                            <ul class="tag mb0 news_views">
+                                {% if post.views %}
+                                    <li class="list-inline-item views"><a>{{ post.views }} <span class="flaticon-view"></span></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="tc_content">
+                            {% if post.category.name %}
+                                <p class="text-thm">{{ post.category.name }}</p>
+                            {% endif %}
+                            <a href="{{ post.url }}"><h4 title="{{ post.title }}">{{ str_limit(post.title, 54) }}</h4></a>
+                            <!-- <p>{{ str_limit(post.content, 80) }}<a href="{{ post.url }}"><small> Read More!</small></a> </p> -->
+                            <a href="{{ post.url }}"><small> Read More!</small></a> 
+                        </div>
+                        <div class="fp_footer">
+                            <a class="fp_pdate float-left" href="#"><i class="flaticon-calendar"></i> {{ post.published_at|date('M d, Y') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <span class="property-nodata">{{ noPostMessage }}</span>
+        {% endfor %}
+    </div>    
+{% elseif __SELF__.displayType == 'listPost' %}
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-md-6 col-lg-6">
+                <div class="for_blog feat_property">
+                    <div class="thumb">
+                        <img class="img-whp" src="{{ post.post_image.path }}" width="340" height="230" alt="{{ post.id }}">
+                        <div class="thmb_cntnt">
+                            <ul class="tag mb0 news_views">
+                                {% if post.views %}
+                                    <li class="list-inline-item"><a href="#">{{ post.views }} <span class="flaticon-view"></span></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="tc_content">
+                            {% if post.category.name %}
+                                <p class="text-thm">{{ post.category.name }}</p>
+                            {% endif %}
+                            <a href="{{ post.url }}"><h4 title="{{ post.title }}">{{ str_limit(post.title, 54) }}</h4></a>
+                            <p>{{ str_limit(post.content, 80) }}<a href="{{ post.url }}"><small> Read More!</small></a> </p>
+                        </div>
+                        <div class="fp_footer">
+                            <a class="fp_pdate float-left" href="#"><i class="flaticon-calendar"></i> {{ post.published_at|date('M d, Y') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <span class="property-nodata">{{ noPostMessage }}</span>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-lg-12 mt20">
+            <div class="mbp_pagination">
+                {% if posts.lastPage > 1 %}
+                <ul class="page_navigation">
+                    {% if posts.currentPage > 1 %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}"><span class="flaticon-left-arrow"></span></a>
+                    </li>
+                    {% endif %}
+
+                    {% for page in 1..posts.lastPage %}
+                    <li class="page-item {{ posts.currentPage == page ? 'active' : null }}" aria-current="{{ posts.currentPage == page ? 'page' : null }}">
+                        <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if posts.lastPage > posts.currentPage %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}"><span class="flaticon-right-arrow"></span></a>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% elseif __SELF__.displayType == 'sidePost' %}
+    {% for post in posts %}
+        <div class="media">
+            <img class="align-self-start mr-3" src="{{ post.post_image.path }}" width="90" height="80" alt="{{ post.id }}">
+            <div class="media-body">
+                <a href="{{ post.url }}"><h6 class="mt-0 post_title" title="{{ post.title }}">{{ str_limit(post.title, 40) }}</h6></a>
+                <ul class="mb0">
+                    <li class="list-inline-item"><i class="flaticon-calendar"></i> {{ post.published_at|date('M d, Y') }}</li>
+                </ul>
+            </div>
+        </div>
+    {% else %}
+        <span class="property-nodata">{{ noPostMessage }}</span>
+    {% endfor %}
+{% else %}
+    <p class="text-center">Select post list display type</p>
+{% endif %}

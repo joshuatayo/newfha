@@ -1,0 +1,9 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================    
+submenus:
+    label: Submenu
+    list: ~/plugins/joshuatayo/menu/models/submenu/columns.yaml
+    form: ~/plugins/joshuatayo/menu/models/submenu/fields.yaml
+    emptyMessage: no records
+

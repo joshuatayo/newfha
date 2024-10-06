@@ -1,0 +1,4 @@
+title: Amenities
+modelClass: JoshuaTayo\Property\Models\Amenity
+toolbar:
+    buttons: reorder_toolbar

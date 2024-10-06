@@ -1,0 +1,10 @@
+name: Properties
+form: $/joshuatayo/property/models/property/fields.yaml
+modelClass: JoshuaTayo\Property\Models\Property
+defaultRedirect: joshuatayo/property/properties
+create:
+    redirect: 'joshuatayo/property/properties/update/:id'
+    redirectClose: joshuatayo/property/properties
+update:
+    redirect: joshuatayo/property/properties
+    redirectClose: joshuatayo/property/properties

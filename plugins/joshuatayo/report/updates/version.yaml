@@ -1,0 +1,8 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table joshuatayo_report_categories'
+    - builder_table_create_joshuatayo_report_categories.php
+v1.0.3:
+    - 'Created table joshuatayo_report_reports'
+    - builder_table_create_joshuatayo_report_reports.php

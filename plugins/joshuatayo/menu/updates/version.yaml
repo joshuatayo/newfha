@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table joshuatayo_menu_menus'
+    - builder_table_create_joshuatayo_menu_menus.php
+1.0.3:
+    - 'Created table joshuatayo_menu_submenus'
+    - builder_table_create_joshuatayo_menu_submenus.php

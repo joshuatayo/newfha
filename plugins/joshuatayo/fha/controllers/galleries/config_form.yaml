@@ -1,0 +1,10 @@
+name: Galleries
+form: $/joshuatayo/fha/models/gallery/fields.yaml
+modelClass: JoshuaTayo\Fha\Models\Gallery
+defaultRedirect: joshuatayo/fha/galleries
+create:
+    redirect: 'joshuatayo/fha/galleries/update/:id'
+    redirectClose: joshuatayo/fha/galleries
+update:
+    redirect: joshuatayo/fha/galleries
+    redirectClose: joshuatayo/fha/galleries

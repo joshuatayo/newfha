@@ -1,0 +1,4 @@
+title: Cities
+modelClass: JoshuaTayo\NigeriaLocation\Models\City
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,78 @@
+url = "/videos"
+layout = "layout"
+title = "Videos"
+is_hidden = 0
+
+[videolist]
+noVideoMessage = "No video found"
+pageNumber = "{{ :page }}"
+videosPerPage = 10
+sortField = "created_at"
+sortType = "desc"
+==
+<section class="inner_page_breadcrumb bg_page videos">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="{{ 'home'|page }}">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Videos</li>
+						</ol>
+						<h1 class="breadcrumb_title">Videos</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <section class="about-section pt30 pb30">
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-title text-center">
+                        <img src="{{ 'assets/images/head-top.png'|theme }}" alt="">
+                        <h2 class="text-uppercase mt0">Videos</h2>
+                        <p>Videos from our recent activities and events</p>
+                    </div>
+                </div>
+            </div>
+			<div class="row">
+				{% for video in videos %}
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <div class="gallery_item properti_city">
+                        <iframe width="370" height="220" src="https://www.youtube.com/embed/{{ video.link }}" title="{{ video.title }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+                {% else %}
+                    <span class="photo-nodata text-center">{{ noVideoMessage }}</span>
+                {% endfor %}
+
+                {% if videos.lastPage > 1 %}
+                <div class="col-lg-12 mt20">
+                    <div class="mbp_pagination">
+                        <ul class="page_navigation">
+                            {% if videos.currentPage > 1 %}
+                            <li class="page-item">
+                                <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (videos.currentPage-1) }) }}"> <span class="flaticon-left-arrow"></span> Prev</a>
+                            </li>
+                            {% endif %}
+
+                            {% for page in 1..videos.lastPage %}
+                            <li class="page-item {{ videos.currentPage == page ? 'active' : null }}" aria-current="{{ videos.currentPage == page ? 'page' : null }}">
+                                <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                            </li>
+                            {% endfor %}
+
+                            {% if videos.lastPage > videos.currentPage %}
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (videos.currentPage+1) }) }}"><span class="flaticon-right-arrow"></span></a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+			</div>
+		</div>
+	</section>

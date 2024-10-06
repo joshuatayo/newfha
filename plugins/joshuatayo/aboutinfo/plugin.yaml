@@ -1,0 +1,21 @@
+plugin:
+    name: 'joshuatayo.aboutinfo::lang.plugin.name'
+    description: 'joshuatayo.aboutinfo::lang.plugin.description'
+    author: 'Joshua Tayo'
+    icon: oc-icon-asterisk
+    homepage: ''
+permissions:
+    joshuatayo.aboutinfo.manage_aboutinfo:
+        tab: 'joshuatayo.aboutinfo::lang.plugin.name'
+        label: 'Manage About Info'
+    joshuatayo.aboutinfo.manage_aboutinfo.access_management_teams:
+        tab: 'joshuatayo.aboutinfo::lang.plugin.name'
+        label: 'Access Management Teams'
+navigation:
+    team-members:
+        label: 'Management Teams'
+        url: system/settings/update/joshuatayo/aboutinfo/managementTeams
+        icon: icon-users
+        permissions:
+            - joshuatayo.aboutinfo.manage_aboutinfo
+            - joshuatayo.aboutinfo.manage_aboutinfo.access_management_teams

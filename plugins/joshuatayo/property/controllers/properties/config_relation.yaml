@@ -1,0 +1,15 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+floorplans:
+    label: Floorplan
+    list: ~/plugins/joshuatayo/property/models/floorplan/columns.yaml
+    form: ~/plugins/joshuatayo/property/models/floorplan/fields.yaml
+    emptyMessage: no records
+    
+features:
+    label: Feature
+    list: ~/plugins/joshuatayo/property/models/feature/columns.yaml
+    form: ~/plugins/joshuatayo/property/models/feature/fields.yaml
+    emptyMessage: no records
+

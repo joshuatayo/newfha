@@ -1,0 +1,10 @@
+name: ManagementTeams
+form: $/joshuatayo/aboutinfo/models/managementteam/fields.yaml
+modelClass: JoshuaTayo\AboutInfo\Models\ManagementTeam
+defaultRedirect: joshuatayo/aboutinfo/managementteams
+create:
+    redirect: 'joshuatayo/aboutinfo/managementteams/update/:id'
+    redirectClose: joshuatayo/aboutinfo/managementteams
+update:
+    redirect: joshuatayo/aboutinfo/managementteams
+    redirectClose: joshuatayo/aboutinfo/managementteams

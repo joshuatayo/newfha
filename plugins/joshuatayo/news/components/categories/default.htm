@@ -1,0 +1,14 @@
+{% set categories = __SELF__.categories %}
+
+{% for category in categories %}
+    {% if loop.first %}
+        <ul>
+    {% endif %}
+
+    <li><a href="news/{{ category.slug }}">{{ category.name }}{{ category.url }}</a></li>
+    {% if loop.last %}
+        </ul>
+    {% endif %}
+{% else %}
+    <span class="post-nodata">{{ noPostsMessage }}</span>
+{% endfor %}

@@ -1,0 +1,4 @@
+title: States
+modelClass: JoshuaTayo\NigeriaLocation\Models\State
+toolbar:
+    buttons: reorder_toolbar

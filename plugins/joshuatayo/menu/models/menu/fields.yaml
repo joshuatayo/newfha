@@ -1,0 +1,43 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: auto
+        default: 1
+        type: checkbox
+    has_submenu:
+        label: 'Has Submenu'
+        span: auto
+        type: checkbox
+    name:
+        label: 'Menu Name'
+        span: auto
+        required: 1
+        type: text
+    url:
+        label: 'Menu Url'
+        span: auto
+        showSearch: true
+        type: dropdown
+        placeholder: '- no default -'
+    # url:
+    #     label: 'Menu Url'
+    #     span: auto
+    #     preset:
+    #         field: name
+    #         type: slug
+    #     type: text
+    sorting:
+        label: Sorting
+        span: auto
+        attributes:
+            min: '1'
+        type: number
+        comment: 'eg: 1, 2, 3, ...'
+    submenus:
+        span: full
+        path: $/joshuatayo/menu/models/menu/_submenus.htm
+        trigger:
+            action: show
+            field: has_submenu
+            condition: checked
+        type: partial

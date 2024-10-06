@@ -1,0 +1,22 @@
+fields:
+    is_enabled:
+        label: Enabled
+        span: full
+        default: 1
+        type: checkbox
+    name:
+        label: Name
+        span: auto
+        type: text
+    geopoliticalzone:
+        label: 'Geopolitical Zone'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        emptyOption: Select
+        type: relation
+    code:
+        label: Code
+        span: auto
+        type: text
+        comment: 'Enter a unique code to identify this State.'

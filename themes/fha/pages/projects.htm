@@ -1,0 +1,42 @@
+title = "Projects"
+url = "/:slug"
+layout = "layout"
+is_hidden = 0
+
+[projectdetails]
+slug = "{{ :slug }}"
+==
+<section class="inner_page_breadcrumb bg_page" style="background-image: url({{ project.bg_image.path }});">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="{{ 'home'|page }}">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">{{ project.name }}</li>
+						</ol>
+						<h1 class="breadcrumb_title">{{ project.name }}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="about-section pb30">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main-title text-center">
+						<h2 class="text-uppercase mt0">{{ project.name }}</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="listing_single_description">
+					{% component 'projectdetails' %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

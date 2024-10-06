@@ -1,0 +1,36 @@
+plugin:
+    name: 'joshuatayo.report::lang.plugin.name'
+    description: 'joshuatayo.report::lang.plugin.description'
+    author: 'Joshua Tayo'
+    icon: oc-icon-pencil-square
+    homepage: ''
+permissions:
+    joshuatayo.report.manage_report:
+        tab: 'joshuatayo.report::lang.plugin.name'
+        label: 'Manage Report'
+    joshuatayo.report.manage_report.access_reports:
+        tab: 'joshuatayo.report::lang.plugin.name'
+        label: 'Access Reports'
+    joshuatayo.report.manage_report.access_categories:
+        tab: 'joshuatayo.report::lang.plugin.name'
+        label: 'Access Categories'
+navigation:
+    report-menu:
+        label: Report
+        url: /
+        icon: icon-pencil-square
+        permissions:
+            - joshuatayo.report.manage_report
+        sideMenu:
+            reports:
+                label: Reports
+                url: joshuatayo/report/reports
+                icon: icon-pencil
+                permissions:
+                    - joshuatayo.report.manage_report.access_reports
+            categories:
+                label: Categories
+                url: joshuatayo/report/categories
+                icon: icon-sitemap
+                permissions:
+                    - joshuatayo.report.manage_report.access_categories

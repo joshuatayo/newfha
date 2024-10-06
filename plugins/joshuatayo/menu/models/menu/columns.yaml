@@ -1,0 +1,18 @@
+columns:
+    name:
+        label: 'Menu Name'
+        type: text
+        searchable: true
+        sortable: true
+    sorting:
+        label: Sorting
+        type: number
+        sortable: true
+    has_submenu:
+        label: Sub-Menu
+        type: number
+        sortable: true
+    is_enabled:
+        label: Enabled
+        type: number
+        sortable: true
